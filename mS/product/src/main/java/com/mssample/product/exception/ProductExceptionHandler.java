@@ -5,14 +5,16 @@ import static org.springframework.http.HttpStatus.NOT_FOUND;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.http.converter.HttpMessageNotWritableException;
+import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 import com.mssample.product.model.ErrorMessage;
 
 import lombok.extern.slf4j.Slf4j;
 @Slf4j
-public class ProductExceptionHandler {
+@ControllerAdvice
+public class ProductExceptionHandler extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler({RuntimeException.class})
     public ResponseEntity<ErrorMessage> exception(RuntimeException e) {
@@ -27,11 +29,6 @@ public class ProductExceptionHandler {
     @ExceptionHandler({DealNotFoundException.class})
     public ResponseEntity<ErrorMessage> dealNotFoundException(DealNotFoundException e) {
         return error(NOT_FOUND, e);
-    }
-
-    @ExceptionHandler({HttpMessageNotWritableException.class})
-    public ResponseEntity<ErrorMessage> hHttpMessageNotWritableException(HttpMessageNotWritableException e) {
-        return error(INTERNAL_SERVER_ERROR, e);
     }
 
     private ResponseEntity<ErrorMessage> error(HttpStatus status, Exception e) {
