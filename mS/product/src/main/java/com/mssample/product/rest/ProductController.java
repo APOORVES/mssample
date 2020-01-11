@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.mssample.product.exception.ProductNotFoundException;
 import com.mssample.product.model.Product;
 import com.mssample.product.rest.transform.ProductTransformer;
 import com.mssample.product.service.ProductService;
@@ -48,10 +49,24 @@ public class ProductController {
 	@GetMapping(value = "/{productname}/details", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<List<Map<String, String>>> productDetail(@PathVariable("productname") String productName){
 		log.info("searchproduct invoked with productName="+productName);
-		List<Product> products = productService.searchProduct(productName); 
+		List<Product> products = productService.searchProductExact(productName); 
 		List<Map<String, String>> productsResponse = productTransformer.transformProductsDetails(products);
 		log.info("searchproduct returning productList="+productsResponse);
 		ResponseEntity<List<Map<String, String>>> response = new ResponseEntity<List<Map<String, String>>>(productsResponse, HttpStatus.OK);
+		return response;
+	}
+
+	@GetMapping(value = "{userName}/recommendations", produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<List<Map<String, String>>> userDetail(@PathVariable("userName") String userName){
+		log.info("userDetail invoked with userName="+userName);
+		List<Product> products = productService.getRecommendations(userName);
+		if(products == null || products.isEmpty())
+		{
+			throw new ProductNotFoundException("No Purchase history found");
+		}
+		List<Map<String, String>> recommendationsResponse = productTransformer.transformRecommendations(products);
+		log.info("searchproduct returning recommendationsResponse="+recommendationsResponse);
+		ResponseEntity<List<Map<String, String>>> response = new ResponseEntity<List<Map<String, String>>>(recommendationsResponse, HttpStatus.OK);
 		return response;
 	}
 

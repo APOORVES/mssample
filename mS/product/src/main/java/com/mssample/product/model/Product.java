@@ -50,8 +50,12 @@ public class Product {
 	@JoinColumn(name="SELLER_ID")
 	private Seller seller;
 	@Transient
-	public double getAvgRating() {
-		return ratings.stream().collect(Collectors.averagingDouble(Rating::getRating));
+	public String getAvgRating() {
+		if(ratings != null && !ratings.isEmpty())
+		{
+			return ""+ratings.stream().collect(Collectors.averagingDouble(Rating::getRating));
+		}
+		return "";
 	}
 	@OneToMany(mappedBy = "productId")
 	private List<Rating> ratings;

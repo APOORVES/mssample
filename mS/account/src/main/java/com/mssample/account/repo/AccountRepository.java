@@ -7,6 +7,8 @@ import com.mssample.account.model.User;
 
 @Repository
 public interface AccountRepository extends JpaRepository<User, String> {
-	User findByUserIdAndPassword(long userId, String password);
 	User findByEmail(String email);
+	User findByUserId(long userId);
+	User findByName(String userName);
+	User findByNameAndPassword(String name, String password);
 }

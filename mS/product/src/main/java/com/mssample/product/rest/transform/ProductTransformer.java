@@ -33,7 +33,7 @@ public class ProductTransformer {
 	
 	public List<Map<String, String>> transformDeals(List<Product> products)
 	{
-		List<Map<String, String>> result; // = new ArrayList<Map<String, String>>()
+		List<Map<String, String>> result;
 		result = products.stream().map(product->
 											{
 												Map<String, String> resultMap = new HashMap<String,String>();
@@ -58,13 +58,28 @@ public class ProductTransformer {
 												resultMap.put("desc", product.getDescription());
 												resultMap.put("category", product.getCategory());
 												resultMap.put("price", ""+product.getPrice());
-												resultMap.put("discount", ""+product.getDeal().getDiscount());
+												resultMap.put("discount", product.getDeal()!=null?""+product.getDeal().getDiscount():"");
 												resultMap.put("deliveryCharge", ""+product.getDeliveryCharge());
 												resultMap.put("offerPrice", ""+product.getOfferPrice());
-												resultMap.put("seller", ""+product.getSeller().getSellerName());
-												resultMap.put("sellerCount", ""+product.getSeller().getSellerCount());
+												resultMap.put("seller", product.getSeller()!=null?""+product.getSeller().getSellerName():"");
+												resultMap.put("sellerCount", product.getSeller()!=null?""+product.getSeller().getSellerCount():"");
 												resultMap.put("avgRating", ""+product.getAvgRating());
 												resultMap.put("reviews", ""+product.getRatings());
+												return resultMap;
+											}
+								  ).collect(Collectors.toList());
+		
+		return result;
+	}
+
+	public List<Map<String, String>> transformRecommendations(List<Product> products) {
+		List<Map<String, String>> result;
+		result = products.stream().map(product->
+											{
+												Map<String, String> resultMap = new HashMap<String,String>();
+												resultMap.put("displayName", product.getDisplayName());
+												resultMap.put("shortDesc", product.getShortDesc());
+												resultMap.put("category", product.getCategory());
 												return resultMap;
 											}
 								  ).collect(Collectors.toList());
