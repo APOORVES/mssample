@@ -11,13 +11,14 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
 @Table(name = "DEAL")
-@Getter @Setter @NoArgsConstructor
+@Getter @Setter @NoArgsConstructor @AllArgsConstructor
 public class Deal {
 	@Id
 	@Column(name="DEAL_ID")
@@ -34,6 +35,7 @@ public class Deal {
 	private Timestamp endDate;
 	@Column(name="DISCOUNT")
 	private double discount;
+	
 
 
 }

@@ -32,7 +32,7 @@ public class AccountController {
 	public ResponseEntity<String> login(@RequestBody User user){
 		log.info("login invoked for userName="+user.getName());
 		Boolean result = accountService.findUser(user); 
-		log.info("login successfull for userName="+user.getName());
+		log.info("login successfull for userName="+user.getName() + " result=" +result);
 		ResponseEntity<String> response = new ResponseEntity<String>("Seller:"+user.getName(), HttpStatus.OK);
 		return response;
 	}
@@ -46,7 +46,7 @@ public class AccountController {
 			response = errors.getAllErrors().stream().map(ObjectError::getDefaultMessage)
 					.collect(Collectors.joining(","));
 			ErrorMessage error = new ErrorMessage();
-			error.setErrorCode(HttpStatus.NOT_ACCEPTABLE.value());
+			error.setErrorCode(HttpStatus.BAD_REQUEST.value());
 			error.setErrorMessage(response);
 			return ResponseEntity.ok(error);
 		}

@@ -16,10 +16,12 @@ import com.mssample.product.model.Product;
 import com.mssample.product.rest.transform.ProductTransformer;
 import com.mssample.product.service.ProductService;
 
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @RestController
+@RequiredArgsConstructor
 public class ProductController {
 	@Autowired
 	ProductService productService;
@@ -57,7 +59,7 @@ public class ProductController {
 	}
 
 	@GetMapping(value = "{userName}/recommendations", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<List<Map<String, String>>> userDetail(@PathVariable("userName") String userName){
+	public ResponseEntity<List<Map<String, String>>> userRecommendations(@PathVariable("userName") String userName){
 		log.info("userDetail invoked with userName="+userName);
 		List<Product> products = productService.getRecommendations(userName);
 		if(products == null || products.isEmpty())

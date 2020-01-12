@@ -5,6 +5,8 @@ import java.util.stream.Collectors;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -15,13 +17,14 @@ import javax.persistence.Transient;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
 @Table(name = "PRODUCT")
-@Getter @Setter @NoArgsConstructor
+@Getter @Setter @NoArgsConstructor @AllArgsConstructor
 public class Product {
 	@Id
 	@Column(name="PRODUCT_ID")
@@ -45,7 +48,6 @@ public class Product {
 	public double getOfferPrice() {
 		return price*deal.getDiscount();
 	}
-	//@JsonBackReference
 	@ManyToOne
 	@JoinColumn(name="SELLER_ID")
 	private Seller seller;
@@ -59,6 +61,6 @@ public class Product {
 	}
 	@OneToMany(mappedBy = "productId")
 	private List<Rating> ratings;
- 
+
 
 }

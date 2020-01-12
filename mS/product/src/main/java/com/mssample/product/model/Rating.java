@@ -7,24 +7,25 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
 @Table(name = "RATING")
-@Getter @Setter @NoArgsConstructor
+@Getter @Setter @NoArgsConstructor @AllArgsConstructor
 public class Rating {
 	@JsonIgnore
 	@Id
 	@Column(name="RATING_ID")
 	private String ratingId;
 	@Column(name="USER_ID")
-	private double userId;
+	private String userName;
 	@Column(name="RATING")
 	private double rating;
 	@Column(name="REVIEW_COMMENTS")
-	private double reviewComments;
+	private String reviewComments;
 	@JsonIgnore
 	@Column(name="PRODUCT_ID")
 	private String productId;
