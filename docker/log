@@ -1,0 +1,935 @@
+Attaching to docker_zipkinms_1, docker_configserverms_1, docker_db_1, docker_accountms_1, docker_productms_1
+[32mdb_1              |[0m 2020-01-13 06:48:23+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 5.7.28-1debian9 started.
+[32mdb_1              |[0m 2020-01-13 06:48:25+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+[32mdb_1              |[0m 2020-01-13 06:48:26+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 5.7.28-1debian9 started.
+[32mdb_1              |[0m 2020-01-13T06:48:26.588861Z 0 [Warning] TIMESTAMP with implicit DEFAULT value is deprecated. Please use --explicit_defaults_for_timestamp server option (see documentation for more details).
+[32mdb_1              |[0m 2020-01-13T06:48:26.590465Z 0 [Note] mysqld (mysqld 5.7.28) starting as process 1 ...
+[32mdb_1              |[0m 2020-01-13T06:48:26.596624Z 0 [Note] InnoDB: PUNCH HOLE support available
+[32mdb_1              |[0m 2020-01-13T06:48:26.596685Z 0 [Note] InnoDB: Mutexes and rw_locks use GCC atomic builtins
+[32mdb_1              |[0m 2020-01-13T06:48:26.596690Z 0 [Note] InnoDB: Uses event mutexes
+[32mdb_1              |[0m 2020-01-13T06:48:26.596693Z 0 [Note] InnoDB: GCC builtin __atomic_thread_fence() is used for memory barrier
+[32mdb_1              |[0m 2020-01-13T06:48:26.596696Z 0 [Note] InnoDB: Compressed tables use zlib 1.2.11
+[32mdb_1              |[0m 2020-01-13T06:48:26.596699Z 0 [Note] InnoDB: Using Linux native AIO
+[32mdb_1              |[0m 2020-01-13T06:48:26.617870Z 0 [Note] InnoDB: Number of pools: 1
+[32mdb_1              |[0m 2020-01-13T06:48:26.618364Z 0 [Note] InnoDB: Using CPU crc32 instructions
+[32mdb_1              |[0m 2020-01-13T06:48:26.649898Z 0 [Note] InnoDB: Initializing buffer pool, total size = 128M, instances = 1, chunk size = 128M
+[32mdb_1              |[0m 2020-01-13T06:48:26.663270Z 0 [Note] InnoDB: Completed initialization of buffer pool
+[32mdb_1              |[0m 2020-01-13T06:48:26.666713Z 0 [Note] InnoDB: If the mysqld execution user is authorized, page cleaner thread priority can be changed. See the man page of setpriority().
+[32mdb_1              |[0m 2020-01-13T06:48:26.797307Z 0 [Note] InnoDB: Highest supported file format is Barracuda.
+[32mdb_1              |[0m 2020-01-13T06:48:27.515229Z 0 [Note] InnoDB: Creating shared tablespace for temporary tables
+[32mdb_1              |[0m 2020-01-13T06:48:27.515338Z 0 [Note] InnoDB: Setting file './ibtmp1' size to 12 MB. Physically writing the file full; Please wait ...
+[32mdb_1              |[0m 2020-01-13T06:48:27.767206Z 0 [Note] InnoDB: File './ibtmp1' size is now 12 MB.
+[32mdb_1              |[0m 2020-01-13T06:48:27.768792Z 0 [Note] InnoDB: 96 redo rollback segment(s) found. 96 redo rollback segment(s) are active.
+[32mdb_1              |[0m 2020-01-13T06:48:27.768874Z 0 [Note] InnoDB: 32 non-redo rollback segment(s) are active.
+[32mdb_1              |[0m 2020-01-13T06:48:27.770084Z 0 [Note] InnoDB: Waiting for purge to start
+[32mdb_1              |[0m 2020-01-13T06:48:27.925882Z 0 [Note] InnoDB: 5.7.28 started; log sequence number 12609468
+[32mdb_1              |[0m 2020-01-13T06:48:27.926416Z 0 [Note] Plugin 'FEDERATED' is disabled.
+[32mdb_1              |[0m 2020-01-13T06:48:27.926915Z 0 [Note] InnoDB: Loading buffer pool(s) from /var/lib/mysql/ib_buffer_pool
+[32mdb_1              |[0m 2020-01-13T06:48:28.359186Z 0 [Note] InnoDB: Buffer pool(s) load completed at 200113  6:48:28
+[32mdb_1              |[0m 2020-01-13T06:48:28.803680Z 0 [Note] Found ca.pem, server-cert.pem and server-key.pem in data directory. Trying to enable SSL support using them.
+[32mdb_1              |[0m 2020-01-13T06:48:28.803778Z 0 [Note] Skipping generation of SSL certificates as certificate files are present in data directory.
+[32mdb_1              |[0m 2020-01-13T06:48:28.835855Z 0 [Warning] CA certificate ca.pem is self signed.
+[32mdb_1              |[0m 2020-01-13T06:48:28.835978Z 0 [Note] Skipping generation of RSA key pair as key files are present in data directory.
+[32mdb_1              |[0m 2020-01-13T06:48:28.879462Z 0 [Note] Server hostname (bind-address): '*'; port: 3306
+[32mdb_1              |[0m 2020-01-13T06:48:28.880003Z 0 [Note] IPv6 is available.
+[32mdb_1              |[0m 2020-01-13T06:48:28.880419Z 0 [Note]   - '::' resolves to '::';
+[32mdb_1              |[0m 2020-01-13T06:48:28.880806Z 0 [Note] Server socket created on IP: '::'.
+[32mdb_1              |[0m 2020-01-13T06:48:28.965546Z 0 [Warning] Insecure configuration for --pid-file: Location '/var/run/mysqld' in the path is accessible to all OS users. Consider choosing a different directory.
+[36mzipkinms_1        |[0m SLF4J: Class path contains multiple SLF4J bindings.
+[36mzipkinms_1        |[0m SLF4J: Found binding in [jar:file:/zipkinms-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/logback-classic-1.2.3.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+[36mzipkinms_1        |[0m SLF4J: Found binding in [jar:file:/zipkinms-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/log4j-slf4j-impl-2.11.2.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+[36mzipkinms_1        |[0m SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+[36mzipkinms_1        |[0m SLF4J: Actual binding is of type [ch.qos.logback.classic.util.ContextSelectorStaticBinder]
+[36mzipkinms_1        |[0m 2020-01-13 03:39:15.809  INFO [-,,,] 6 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$e983874f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[36mzipkinms_1        |[0m                                     ********
+[36mzipkinms_1        |[0m                                   **        **
+[36mzipkinms_1        |[0m                                  *            *
+[36mzipkinms_1        |[0m                                 **            **
+[36mzipkinms_1        |[0m                                 **            **
+[36mzipkinms_1        |[0m                                  **          **
+[36mzipkinms_1        |[0m                                   **        **
+[36mzipkinms_1        |[0m                                     ********
+[36mzipkinms_1        |[0m                                       ****
+[36mzipkinms_1        |[0m                                       ****
+[36mzipkinms_1        |[0m         ****                          ****
+[36mzipkinms_1        |[0m      ******                           ****                                 ***
+[36mzipkinms_1        |[0m   ****************************************************************************
+[36mzipkinms_1        |[0m     *******                           ****                                 ***
+[36mzipkinms_1        |[0m         ****                          ****
+[36mzipkinms_1        |[0m                                        **
+[36mzipkinms_1        |[0m                                        **
+[36mzipkinms_1        |[0m 
+[36mzipkinms_1        |[0m 
+[36mzipkinms_1        |[0m              *****      **     *****     ** **       **     **   **
+[36mzipkinms_1        |[0m                **       **     **  *     ***         **     **** **
+[36mzipkinms_1        |[0m               **        **     *****     ****        **     **  ***
+[36mzipkinms_1        |[0m              ******     **     **        **  **      **     **   **
+[36mzipkinms_1        |[0m 
+[36mzipkinms_1        |[0m :: Powered by Spring Boot ::         (v2.1.11.RELEASE)
+[36mzipkinms_1        |[0m 
+[36mzipkinms_1        |[0m 2020-01-13 03:39:16.883  INFO [ZipkinServer,,,] 6 --- [           main] com.mssample.zipkin.ZipkinApplication    : No active profile set, falling back to default profiles: default
+[36mzipkinms_1        |[0m 2020-01-13 03:39:27.423  INFO [ZipkinServer,,,] 6 --- [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=8246837c-ca39-3385-b170-e2f602326a4d
+[36mzipkinms_1        |[0m 2020-01-13 03:39:30.804  INFO [ZipkinServer,,,] 6 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$e983874f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[36mzipkinms_1        |[0m 2020-01-13 03:39:36.028  INFO [ZipkinServer,,,] 6 --- [           main] io.undertow.servlet                      : Initializing Spring embedded WebApplicationContext
+[36mzipkinms_1        |[0m 2020-01-13 03:39:36.032  INFO [ZipkinServer,,,] 6 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 19054 ms
+[36mzipkinms_1        |[0m 2020-01-13 03:39:45.296  INFO [ZipkinServer,,,] 6 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+[36mzipkinms_1        |[0m 2020-01-13 03:39:48.975  INFO [ZipkinServer,,,] 6 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 18 endpoint(s) beneath base path '/actuator'
+[36mzipkinms_1        |[0m 2020-01-13 03:39:49.237  INFO [ZipkinServer,,,] 6 --- [           main] io.undertow                              : starting server: Undertow - 2.0.28.Final
+[36mzipkinms_1        |[0m 2020-01-13 03:39:49.260  INFO [ZipkinServer,,,] 6 --- [           main] org.xnio                                 : XNIO version 3.6.5.Final
+[36mzipkinms_1        |[0m 2020-01-13 03:39:49.302  INFO [ZipkinServer,,,] 6 --- [           main] org.xnio.nio                             : XNIO NIO Implementation Version 3.6.5.Final
+[36mzipkinms_1        |[0m 2020-01-13 03:39:49.424  INFO [ZipkinServer,,,] 6 --- [           main] org.jboss.threads                        : JBoss Threads version 2.3.2.Final
+[36mzipkinms_1        |[0m 2020-01-13 03:39:49.579  INFO [ZipkinServer,,,] 6 --- [           main] o.s.b.w.e.u.UndertowServletWebServer     : Undertow started on port(s) 6001 (http) with context path ''
+[36mzipkinms_1        |[0m 2020-01-13 03:39:49.584  INFO [ZipkinServer,,,] 6 --- [           main] com.mssample.zipkin.ZipkinApplication    : Started ZipkinApplication in 40.732 seconds (JVM running for 45.289)
+[36mzipkinms_1        |[0m SLF4J: Class path contains multiple SLF4J bindings.
+[36mzipkinms_1        |[0m SLF4J: Found binding in [jar:file:/zipkinms-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/logback-classic-1.2.3.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+[36mzipkinms_1        |[0m SLF4J: Found binding in [jar:file:/zipkinms-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/log4j-slf4j-impl-2.11.2.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+[36mzipkinms_1        |[0m SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+[36mzipkinms_1        |[0m SLF4J: Actual binding is of type [ch.qos.logback.classic.util.ContextSelectorStaticBinder]
+[36mzipkinms_1        |[0m 2020-01-13 03:42:22.440  INFO [-,,,] 6 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$e575ca78] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[36mzipkinms_1        |[0m                                     ********
+[36mzipkinms_1        |[0m                                   **        **
+[36mzipkinms_1        |[0m                                  *            *
+[36mzipkinms_1        |[0m                                 **            **
+[36mzipkinms_1        |[0m                                 **            **
+[36mzipkinms_1        |[0m                                  **          **
+[36mzipkinms_1        |[0m                                   **        **
+[36mzipkinms_1        |[0m                                     ********
+[36mzipkinms_1        |[0m                                       ****
+[36mzipkinms_1        |[0m                                       ****
+[36mzipkinms_1        |[0m         ****                          ****
+[36mzipkinms_1        |[0m      ******                           ****                                 ***
+[36mzipkinms_1        |[0m   ****************************************************************************
+[36mzipkinms_1        |[0m     *******                           ****                                 ***
+[36mzipkinms_1        |[0m         ****                          ****
+[36mzipkinms_1        |[0m                                        **
+[36mzipkinms_1        |[0m                                        **
+[36mzipkinms_1        |[0m 
+[36mzipkinms_1        |[0m 
+[36mzipkinms_1        |[0m              *****      **     *****     ** **       **     **   **
+[36mzipkinms_1        |[0m                **       **     **  *     ***         **     **** **
+[36mzipkinms_1        |[0m               **        **     *****     ****        **     **  ***
+[36mzipkinms_1        |[0m              ******     **     **        **  **      **     **   **
+[36mzipkinms_1        |[0m 
+[36mzipkinms_1        |[0m :: Powered by Spring Boot ::         (v2.1.11.RELEASE)
+[36mzipkinms_1        |[0m 
+[36mzipkinms_1        |[0m 2020-01-13 03:42:23.454  INFO [ZipkinServer,,,] 6 --- [           main] com.mssample.zipkin.ZipkinApplication    : No active profile set, falling back to default profiles: default
+[36mzipkinms_1        |[0m 2020-01-13 03:42:34.648  INFO [ZipkinServer,,,] 6 --- [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=8246837c-ca39-3385-b170-e2f602326a4d
+[36mzipkinms_1        |[0m 2020-01-13 03:42:37.749  INFO [ZipkinServer,,,] 6 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$e575ca78] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[36mzipkinms_1        |[0m 2020-01-13 03:42:42.766  INFO [ZipkinServer,,,] 6 --- [           main] io.undertow.servlet                      : Initializing Spring embedded WebApplicationContext
+[36mzipkinms_1        |[0m 2020-01-13 03:42:42.783  INFO [ZipkinServer,,,] 6 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 19000 ms
+[36mzipkinms_1        |[0m 2020-01-13 03:42:50.396  INFO [ZipkinServer,,,] 6 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+[36mzipkinms_1        |[0m 2020-01-13 03:42:54.200  INFO [ZipkinServer,,,] 6 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 18 endpoint(s) beneath base path '/actuator'
+[36mzipkinms_1        |[0m 2020-01-13 03:42:54.923  INFO [ZipkinServer,,,] 6 --- [           main] io.undertow                              : starting server: Undertow - 2.0.28.Final
+[36mzipkinms_1        |[0m 2020-01-13 03:42:54.966  INFO [ZipkinServer,,,] 6 --- [           main] org.xnio                                 : XNIO version 3.6.5.Final
+[36mzipkinms_1        |[0m 2020-01-13 03:42:55.020  INFO [ZipkinServer,,,] 6 --- [           main] org.xnio.nio                             : XNIO NIO Implementation Version 3.6.5.Final
+[36mzipkinms_1        |[0m 2020-01-13 03:42:55.376  INFO [ZipkinServer,,,] 6 --- [           main] org.jboss.threads                        : JBoss Threads version 2.3.2.Final
+[36mzipkinms_1        |[0m 2020-01-13 03:42:55.742  INFO [ZipkinServer,,,] 6 --- [           main] o.s.b.w.e.u.UndertowServletWebServer     : Undertow started on port(s) 6001 (http) with context path ''
+[36mzipkinms_1        |[0m 2020-01-13 03:42:55.746  INFO [ZipkinServer,,,] 6 --- [           main] com.mssample.zipkin.ZipkinApplication    : Started ZipkinApplication in 40.054 seconds (JVM running for 42.155)
+[36mzipkinms_1        |[0m SLF4J: Class path contains multiple SLF4J bindings.
+[36mzipkinms_1        |[0m SLF4J: Found binding in [jar:file:/zipkinms-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/logback-classic-1.2.3.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+[36mzipkinms_1        |[0m SLF4J: Found binding in [jar:file:/zipkinms-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/log4j-slf4j-impl-2.11.2.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+[36mzipkinms_1        |[0m SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+[36mzipkinms_1        |[0m SLF4J: Actual binding is of type [ch.qos.logback.classic.util.ContextSelectorStaticBinder]
+[36mzipkinms_1        |[0m 2020-01-13 03:46:40.941  INFO [-,,,] 6 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$1d18fe5c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[36mzipkinms_1        |[0m                                     ********
+[36mzipkinms_1        |[0m                                   **        **
+[36mzipkinms_1        |[0m                                  *            *
+[36mzipkinms_1        |[0m                                 **            **
+[36mzipkinms_1        |[0m                                 **            **
+[36mzipkinms_1        |[0m                                  **          **
+[36mzipkinms_1        |[0m                                   **        **
+[36mzipkinms_1        |[0m                                     ********
+[36mzipkinms_1        |[0m                                       ****
+[36mzipkinms_1        |[0m                                       ****
+[36mzipkinms_1        |[0m         ****                          ****
+[36mzipkinms_1        |[0m      ******                           ****                                 ***
+[36mzipkinms_1        |[0m   ****************************************************************************
+[36mzipkinms_1        |[0m     *******                           ****                                 ***
+[36mzipkinms_1        |[0m         ****                          ****
+[36mzipkinms_1        |[0m                                        **
+[36mzipkinms_1        |[0m                                        **
+[36mzipkinms_1        |[0m 
+[36mzipkinms_1        |[0m 
+[36mzipkinms_1        |[0m              *****      **     *****     ** **       **     **   **
+[36mzipkinms_1        |[0m                **       **     **  *     ***         **     **** **
+[36mzipkinms_1        |[0m               **        **     *****     ****        **     **  ***
+[36mzipkinms_1        |[0m              ******     **     **        **  **      **     **   **
+[36mzipkinms_1        |[0m 
+[36mzipkinms_1        |[0m :: Powered by Spring Boot ::         (v2.1.11.RELEASE)
+[36mzipkinms_1        |[0m 
+[36mzipkinms_1        |[0m 2020-01-13 03:46:41.477  INFO [ZipkinServer,,,] 6 --- [           main] com.mssample.zipkin.ZipkinApplication    : No active profile set, falling back to default profiles: default
+[36mzipkinms_1        |[0m 2020-01-13 03:46:46.847  INFO [ZipkinServer,,,] 6 --- [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=8246837c-ca39-3385-b170-e2f602326a4d
+[36mzipkinms_1        |[0m 2020-01-13 03:46:48.005  INFO [ZipkinServer,,,] 6 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$1d18fe5c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[36mzipkinms_1        |[0m 2020-01-13 03:46:50.464  INFO [ZipkinServer,,,] 6 --- [           main] io.undertow.servlet                      : Initializing Spring embedded WebApplicationContext
+[36mzipkinms_1        |[0m 2020-01-13 03:46:50.483  INFO [ZipkinServer,,,] 6 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 8939 ms
+[36mzipkinms_1        |[0m 2020-01-13 03:46:54.379  INFO [ZipkinServer,,,] 6 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+[36mzipkinms_1        |[0m 2020-01-13 03:46:55.676  INFO [ZipkinServer,,,] 6 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 18 endpoint(s) beneath base path '/actuator'
+[36mzipkinms_1        |[0m 2020-01-13 03:46:55.965  INFO [ZipkinServer,,,] 6 --- [           main] io.undertow                              : starting server: Undertow - 2.0.28.Final
+[36mzipkinms_1        |[0m 2020-01-13 03:46:55.983  INFO [ZipkinServer,,,] 6 --- [           main] org.xnio                                 : XNIO version 3.6.5.Final
+[36mzipkinms_1        |[0m 2020-01-13 03:46:56.001  INFO [ZipkinServer,,,] 6 --- [           main] org.xnio.nio                             : XNIO NIO Implementation Version 3.6.5.Final
+[36mzipkinms_1        |[0m 2020-01-13 03:46:56.091  INFO [ZipkinServer,,,] 6 --- [           main] org.jboss.threads                        : JBoss Threads version 2.3.2.Final
+[36mzipkinms_1        |[0m 2020-01-13 03:46:56.205  INFO [ZipkinServer,,,] 6 --- [           main] o.s.b.w.e.u.UndertowServletWebServer     : Undertow started on port(s) 6001 (http) with context path ''
+[36mzipkinms_1        |[0m 2020-01-13 03:46:56.208  INFO [ZipkinServer,,,] 6 --- [           main] com.mssample.zipkin.ZipkinApplication    : Started ZipkinApplication in 18.698 seconds (JVM running for 20.515)
+[36mzipkinms_1        |[0m SLF4J: Class path contains multiple SLF4J bindings.
+[36mzipkinms_1        |[0m SLF4J: Found binding in [jar:file:/zipkinms-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/logback-classic-1.2.3.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+[36mzipkinms_1        |[0m SLF4J: Found binding in [jar:file:/zipkinms-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/log4j-slf4j-impl-2.11.2.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+[36mzipkinms_1        |[0m SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+[36mzipkinms_1        |[0m SLF4J: Actual binding is of type [ch.qos.logback.classic.util.ContextSelectorStaticBinder]
+[36mzipkinms_1        |[0m 2020-01-13 04:16:47.043  INFO [-,,,] 6 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$6334020b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[36mzipkinms_1        |[0m                                     ********
+[36mzipkinms_1        |[0m                                   **        **
+[36mzipkinms_1        |[0m                                  *            *
+[36mzipkinms_1        |[0m                                 **            **
+[36mzipkinms_1        |[0m                                 **            **
+[36mzipkinms_1        |[0m                                  **          **
+[36mzipkinms_1        |[0m                                   **        **
+[33mconfigserverms_1  |[0m 
+[33mconfigserverms_1  |[0m   .   ____          _            __ _ _
+[33mconfigserverms_1  |[0m  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+[33mconfigserverms_1  |[0m ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+[33mconfigserverms_1  |[0m  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+[33mconfigserverms_1  |[0m   '  |____| .__|_| |_|_| |_\__, | / / / /
+[33mconfigserverms_1  |[0m  =========|_|==============|___/=/_/_/_/
+[33mconfigserverms_1  |[0m  :: Spring Boot ::        (v2.2.2.RELEASE)
+[33mconfigserverms_1  |[0m 
+[33mconfigserverms_1  |[0m 2020-01-13 03:39:19.606  INFO 6 --- [           main] c.m.c.ConfigserverApplication            : No active profile set, falling back to default profiles: default
+[33mconfigserverms_1  |[0m 2020-01-13 03:39:27.388  INFO 6 --- [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=04ab941f-c40c-33d9-b968-680d9ec581e6
+[33mconfigserverms_1  |[0m 2020-01-13 03:39:31.346  INFO 6 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 6002 (http)
+[33mconfigserverms_1  |[0m 2020-01-13 03:39:31.446  INFO 6 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+[33mconfigserverms_1  |[0m 2020-01-13 03:39:31.451  INFO 6 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
+[33mconfigserverms_1  |[0m 2020-01-13 03:39:31.885  INFO 6 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+[33mconfigserverms_1  |[0m 2020-01-13 03:39:31.885  INFO 6 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 12134 ms
+[33mconfigserverms_1  |[0m 2020-01-13 03:39:40.812  INFO 6 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+[33mconfigserverms_1  |[0m 2020-01-13 03:39:44.007  INFO 6 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+[33mconfigserverms_1  |[0m 2020-01-13 03:39:44.645  INFO 6 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 6002 (http) with context path ''
+[33mconfigserverms_1  |[0m 2020-01-13 03:39:44.714  INFO 6 --- [           main] c.m.c.ConfigserverApplication            : Started ConfigserverApplication in 34.305 seconds (JVM running for 37.521)
+[33mconfigserverms_1  |[0m 
+[33mconfigserverms_1  |[0m   .   ____          _            __ _ _
+[33mconfigserverms_1  |[0m  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+[33mconfigserverms_1  |[0m ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+[33mconfigserverms_1  |[0m  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+[33mconfigserverms_1  |[0m   '  |____| .__|_| |_|_| |_\__, | / / / /
+[33mconfigserverms_1  |[0m  =========|_|==============|___/=/_/_/_/
+[33mconfigserverms_1  |[0m  :: Spring Boot ::        (v2.2.2.RELEASE)
+[33mconfigserverms_1  |[0m 
+[33mconfigserverms_1  |[0m 2020-01-13 03:42:26.149  INFO 6 --- [           main] c.m.c.ConfigserverApplication            : No active profile set, falling back to default profiles: default
+[33mconfigserverms_1  |[0m 2020-01-13 03:42:33.876  INFO 6 --- [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=04ab941f-c40c-33d9-b968-680d9ec581e6
+[33mconfigserverms_1  |[0m 2020-01-13 03:42:37.059  INFO 6 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 6002 (http)
+[33mconfigserverms_1  |[0m 2020-01-13 03:42:37.167  INFO 6 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+[33mconfigserverms_1  |[0m 2020-01-13 03:42:37.173  INFO 6 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
+[33mconfigserverms_1  |[0m 2020-01-13 03:42:37.680  INFO 6 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+[33mconfigserverms_1  |[0m 2020-01-13 03:42:37.682  INFO 6 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 11302 ms
+[33mconfigserverms_1  |[0m 2020-01-13 03:42:44.971  INFO 6 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+[33mconfigserverms_1  |[0m 2020-01-13 03:42:46.969  INFO 6 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+[33mconfigserverms_1  |[0m 2020-01-13 03:42:47.760  INFO 6 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 6002 (http) with context path ''
+[33mconfigserverms_1  |[0m 2020-01-13 03:42:47.816  INFO 6 --- [           main] c.m.c.ConfigserverApplication            : Started ConfigserverApplication in 31.439 seconds (JVM running for 34.205)
+[33mconfigserverms_1  |[0m 
+[33mconfigserverms_1  |[0m   .   ____          _            __ _ _
+[33mconfigserverms_1  |[0m  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+[33mconfigserverms_1  |[0m ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+[33mconfigserverms_1  |[0m  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+[33mconfigserverms_1  |[0m   '  |____| .__|_| |_|_| |_\__, | / / / /
+[33mconfigserverms_1  |[0m  =========|_|==============|___/=/_/_/_/
+[33mconfigserverms_1  |[0m  :: Spring Boot ::        (v2.2.2.RELEASE)
+[36mzipkinms_1        |[0m                                     ********
+[36mzipkinms_1        |[0m                                       ****
+[36mzipkinms_1        |[0m                                       ****
+[36mzipkinms_1        |[0m         ****                          ****
+[36mzipkinms_1        |[0m      ******                           ****                                 ***
+[36mzipkinms_1        |[0m   ****************************************************************************
+[36mzipkinms_1        |[0m     *******                           ****                                 ***
+[36mzipkinms_1        |[0m         ****                          ****
+[36mzipkinms_1        |[0m                                        **
+[36mzipkinms_1        |[0m                                        **
+[36mzipkinms_1        |[0m 
+[36mzipkinms_1        |[0m 
+[36mzipkinms_1        |[0m              *****      **     *****     ** **       **     **   **
+[36mzipkinms_1        |[0m                **       **     **  *     ***         **     **** **
+[36mzipkinms_1        |[0m               **        **     *****     ****        **     **  ***
+[36mzipkinms_1        |[0m              ******     **     **        **  **      **     **   **
+[36mzipkinms_1        |[0m 
+[36mzipkinms_1        |[0m :: Powered by Spring Boot ::         (v2.1.11.RELEASE)
+[36mzipkinms_1        |[0m 
+[36mzipkinms_1        |[0m 2020-01-13 04:16:48.608  INFO [ZipkinServer,,,] 6 --- [           main] com.mssample.zipkin.ZipkinApplication    : No active profile set, falling back to default profiles: default
+[36mzipkinms_1        |[0m 2020-01-13 04:17:02.546  INFO [ZipkinServer,,,] 6 --- [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=8246837c-ca39-3385-b170-e2f602326a4d
+[36mzipkinms_1        |[0m 2020-01-13 04:17:04.751  INFO [ZipkinServer,,,] 6 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$6334020b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[36mzipkinms_1        |[0m 2020-01-13 04:17:07.606  INFO [ZipkinServer,,,] 6 --- [           main] io.undertow.servlet                      : Initializing Spring embedded WebApplicationContext
+[36mzipkinms_1        |[0m 2020-01-13 04:17:07.608  INFO [ZipkinServer,,,] 6 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 18736 ms
+[36mzipkinms_1        |[0m 2020-01-13 04:17:12.092  INFO [ZipkinServer,,,] 6 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+[36mzipkinms_1        |[0m 2020-01-13 04:17:13.500  INFO [ZipkinServer,,,] 6 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 18 endpoint(s) beneath base path '/actuator'
+[36mzipkinms_1        |[0m 2020-01-13 04:17:13.856  INFO [ZipkinServer,,,] 6 --- [           main] io.undertow                              : starting server: Undertow - 2.0.28.Final
+[36mzipkinms_1        |[0m 2020-01-13 04:17:13.897  INFO [ZipkinServer,,,] 6 --- [           main] org.xnio                                 : XNIO version 3.6.5.Final
+[36mzipkinms_1        |[0m 2020-01-13 04:17:13.931  INFO [ZipkinServer,,,] 6 --- [           main] org.xnio.nio                             : XNIO NIO Implementation Version 3.6.5.Final
+[36mzipkinms_1        |[0m 2020-01-13 04:17:14.111  INFO [ZipkinServer,,,] 6 --- [           main] org.jboss.threads                        : JBoss Threads version 2.3.2.Final
+[36mzipkinms_1        |[0m 2020-01-13 04:17:14.318  INFO [ZipkinServer,,,] 6 --- [           main] o.s.b.w.e.u.UndertowServletWebServer     : Undertow started on port(s) 6001 (http) with context path ''
+[36mzipkinms_1        |[0m 2020-01-13 04:17:14.324  INFO [ZipkinServer,,,] 6 --- [           main] com.mssample.zipkin.ZipkinApplication    : Started ZipkinApplication in 38.903 seconds (JVM running for 44.496)
+[36mzipkinms_1        |[0m SLF4J: Class path contains multiple SLF4J bindings.
+[36mzipkinms_1        |[0m SLF4J: Found binding in [jar:file:/zipkinms-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/logback-classic-1.2.3.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+[36mzipkinms_1        |[0m SLF4J: Found binding in [jar:file:/zipkinms-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/log4j-slf4j-impl-2.11.2.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+[36mzipkinms_1        |[0m SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+[36mzipkinms_1        |[0m SLF4J: Actual binding is of type [ch.qos.logback.classic.util.ContextSelectorStaticBinder]
+[33mconfigserverms_1  |[0m 
+[33mconfigserverms_1  |[0m 2020-01-13 03:46:42.210  INFO 8 --- [           main] c.m.c.ConfigserverApplication            : No active profile set, falling back to default profiles: default
+[33mconfigserverms_1  |[0m 2020-01-13 03:46:45.502  INFO 8 --- [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=04ab941f-c40c-33d9-b968-680d9ec581e6
+[33mconfigserverms_1  |[0m 2020-01-13 03:46:47.383  INFO 8 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 6002 (http)
+[33mconfigserverms_1  |[0m 2020-01-13 03:46:47.430  INFO 8 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+[33mconfigserverms_1  |[0m 2020-01-13 03:46:47.443  INFO 8 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
+[33mconfigserverms_1  |[0m 2020-01-13 03:46:47.594  INFO 8 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+[33mconfigserverms_1  |[0m 2020-01-13 03:46:47.595  INFO 8 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 5312 ms
+[33mconfigserverms_1  |[0m 2020-01-13 03:46:51.035  INFO 8 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+[33mconfigserverms_1  |[0m 2020-01-13 03:46:52.827  INFO 8 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+[33mconfigserverms_1  |[0m 2020-01-13 03:46:53.057  INFO 8 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 6002 (http) with context path ''
+[33mconfigserverms_1  |[0m 2020-01-13 03:46:53.072  INFO 8 --- [           main] c.m.c.ConfigserverApplication            : Started ConfigserverApplication in 15.313 seconds (JVM running for 17.333)
+[33mconfigserverms_1  |[0m 2020-01-13 03:48:05.099  INFO 8 --- [nio-6002-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+[33mconfigserverms_1  |[0m 2020-01-13 03:48:05.100  INFO 8 --- [nio-6002-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+[33mconfigserverms_1  |[0m 2020-01-13 03:48:05.113  INFO 8 --- [nio-6002-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 13 ms
+[33mconfigserverms_1  |[0m 2020-01-13 03:48:08.550  INFO 8 --- [nio-6002-exec-1] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: file:/tmp/config-repo-2092366015576571830/ProductMs.properties
+[33mconfigserverms_1  |[0m 2020-01-13 03:48:08.550  INFO 8 --- [nio-6002-exec-1] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: file:/tmp/config-repo-2092366015576571830/application.properties
+[33mconfigserverms_1  |[0m 
+[33mconfigserverms_1  |[0m   .   ____          _            __ _ _
+[33mconfigserverms_1  |[0m  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+[33mconfigserverms_1  |[0m ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+[33mconfigserverms_1  |[0m  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+[33mconfigserverms_1  |[0m   '  |____| .__|_| |_|_| |_\__, | / / / /
+[33mconfigserverms_1  |[0m  =========|_|==============|___/=/_/_/_/
+[33mconfigserverms_1  |[0m  :: Spring Boot ::        (v2.2.2.RELEASE)
+[33mconfigserverms_1  |[0m 
+[33mconfigserverms_1  |[0m 2020-01-13 04:16:52.629  INFO 6 --- [           main] c.m.c.ConfigserverApplication            : No active profile set, falling back to default profiles: default
+[33mconfigserverms_1  |[0m 2020-01-13 04:17:02.094  INFO 6 --- [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=04ab941f-c40c-33d9-b968-680d9ec581e6
+[33mconfigserverms_1  |[0m 2020-01-13 04:17:04.853  INFO 6 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 6002 (http)
+[33mconfigserverms_1  |[0m 2020-01-13 04:17:04.908  INFO 6 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+[33mconfigserverms_1  |[0m 2020-01-13 04:17:04.914  INFO 6 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
+[33mconfigserverms_1  |[0m 2020-01-13 04:17:05.153  INFO 6 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+[33mconfigserverms_1  |[0m 2020-01-13 04:17:05.153  INFO 6 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 12427 ms
+[33mconfigserverms_1  |[0m 2020-01-13 04:17:09.863  INFO 6 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+[33mconfigserverms_1  |[0m 2020-01-13 04:17:11.062  INFO 6 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+[33mconfigserverms_1  |[0m 2020-01-13 04:17:11.416  INFO 6 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 6002 (http) with context path ''
+[33mconfigserverms_1  |[0m 2020-01-13 04:17:11.423  INFO 6 --- [           main] c.m.c.ConfigserverApplication            : Started ConfigserverApplication in 32.885 seconds (JVM running for 40.349)
+[33mconfigserverms_1  |[0m 
+[33mconfigserverms_1  |[0m   .   ____          _            __ _ _
+[33mconfigserverms_1  |[0m  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+[33mconfigserverms_1  |[0m ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+[33mconfigserverms_1  |[0m  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+[33mconfigserverms_1  |[0m   '  |____| .__|_| |_|_| |_\__, | / / / /
+[33mconfigserverms_1  |[0m  =========|_|==============|___/=/_/_/_/
+[33mconfigserverms_1  |[0m  :: Spring Boot ::        (v2.2.2.RELEASE)
+[33mconfigserverms_1  |[0m 
+[33mconfigserverms_1  |[0m 2020-01-13 04:23:52.303  INFO 6 --- [           main] c.m.c.ConfigserverApplication            : No active profile set, falling back to default profiles: default
+[33mconfigserverms_1  |[0m 2020-01-13 04:23:57.640  INFO 6 --- [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=04ab941f-c40c-33d9-b968-680d9ec581e6
+[33mconfigserverms_1  |[0m 2020-01-13 04:23:59.226  INFO 6 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 6002 (http)
+[33mconfigserverms_1  |[0m 2020-01-13 04:23:59.260  INFO 6 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+[33mconfigserverms_1  |[0m 2020-01-13 04:23:59.262  INFO 6 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
+[33mconfigserverms_1  |[0m 2020-01-13 04:23:59.494  INFO 6 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+[33mconfigserverms_1  |[0m 2020-01-13 04:23:59.494  INFO 6 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 6979 ms
+[33mconfigserverms_1  |[0m 2020-01-13 04:24:03.493  INFO 6 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+[33mconfigserverms_1  |[0m 2020-01-13 04:24:04.790  INFO 6 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+[33mconfigserverms_1  |[0m 2020-01-13 04:24:05.068  INFO 6 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 6002 (http) with context path ''
+[33mconfigserverms_1  |[0m 2020-01-13 04:24:05.098  INFO 6 --- [           main] c.m.c.ConfigserverApplication            : Started ConfigserverApplication in 20.525 seconds (JVM running for 23.764)
+[33mconfigserverms_1  |[0m 2020-01-13 04:24:41.891  INFO 6 --- [nio-6002-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+[33mconfigserverms_1  |[0m 2020-01-13 04:24:41.893  INFO 6 --- [nio-6002-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+[33mconfigserverms_1  |[0m 2020-01-13 04:24:41.922  INFO 6 --- [nio-6002-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 28 ms
+[33mconfigserverms_1  |[0m 2020-01-13 04:24:44.364  INFO 6 --- [nio-6002-exec-1] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: file:/tmp/config-repo-329311375685345177/AccountMs.properties
+[33mconfigserverms_1  |[0m 2020-01-13 04:24:44.366  INFO 6 --- [nio-6002-exec-1] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: file:/tmp/config-repo-329311375685345177/application.properties
+[33mconfigserverms_1  |[0m 2020-01-13 04:29:00.126  INFO 6 --- [nio-6002-exec-5] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: file:/tmp/config-repo-329311375685345177/application.properties
+[33mconfigserverms_1  |[0m 
+[33mconfigserverms_1  |[0m   .   ____          _            __ _ _
+[33mconfigserverms_1  |[0m  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+[33mconfigserverms_1  |[0m ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+[33mconfigserverms_1  |[0m  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+[33mconfigserverms_1  |[0m   '  |____| .__|_| |_|_| |_\__, | / / / /
+[33mconfigserverms_1  |[0m  =========|_|==============|___/=/_/_/_/
+[33mconfigserverms_1  |[0m  :: Spring Boot ::        (v2.2.2.RELEASE)
+[33mconfigserverms_1  |[0m 
+[33mconfigserverms_1  |[0m 2020-01-13 04:48:14.530  INFO 6 --- [           main] c.m.c.ConfigserverApplication            : No active profile set, falling back to default profiles: default
+[33mconfigserverms_1  |[0m 2020-01-13 04:48:20.022  INFO 6 --- [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=04ab941f-c40c-33d9-b968-680d9ec581e6
+[33mconfigserverms_1  |[0m 2020-01-13 04:48:21.919  INFO 6 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 6002 (http)
+[33mconfigserverms_1  |[0m 2020-01-13 04:48:22.086  INFO 6 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+[33mconfigserverms_1  |[0m 2020-01-13 04:48:22.088  INFO 6 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
+[33mconfigserverms_1  |[0m 2020-01-13 04:48:22.635  INFO 6 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+[33mconfigserverms_1  |[0m 2020-01-13 04:48:22.653  INFO 6 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 8019 ms
+[33mconfigserverms_1  |[0m 2020-01-13 04:48:26.431  INFO 6 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+[33mconfigserverms_1  |[0m 2020-01-13 04:48:27.726  INFO 6 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+[33mconfigserverms_1  |[0m 2020-01-13 04:48:28.340  INFO 6 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 6002 (http) with context path ''
+[33mconfigserverms_1  |[0m 2020-01-13 04:48:28.414  INFO 6 --- [           main] c.m.c.ConfigserverApplication            : Started ConfigserverApplication in 21.225 seconds (JVM running for 25.541)
+[33mconfigserverms_1  |[0m 2020-01-13 04:48:44.699  INFO 6 --- [nio-6002-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+[33mconfigserverms_1  |[0m 2020-01-13 04:48:44.700  INFO 6 --- [nio-6002-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+[33mconfigserverms_1  |[0m 2020-01-13 04:48:44.743  INFO 6 --- [nio-6002-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 41 ms
+[33mconfigserverms_1  |[0m 2020-01-13 04:48:48.018  INFO 6 --- [nio-6002-exec-1] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: file:/tmp/config-repo-6593560120279269227/application.properties
+[33mconfigserverms_1  |[0m 
+[33mconfigserverms_1  |[0m   .   ____          _            __ _ _
+[33mconfigserverms_1  |[0m  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+[33mconfigserverms_1  |[0m ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+[33mconfigserverms_1  |[0m  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+[33mconfigserverms_1  |[0m   '  |____| .__|_| |_|_| |_\__, | / / / /
+[33mconfigserverms_1  |[0m  =========|_|==============|___/=/_/_/_/
+[33mconfigserverms_1  |[0m  :: Spring Boot ::        (v2.2.2.RELEASE)
+[33mconfigserverms_1  |[0m 
+[33mconfigserverms_1  |[0m 2020-01-13 04:55:10.838  INFO 6 --- [           main] c.m.c.ConfigserverApplication            : No active profile set, falling back to default profiles: default
+[33mconfigserverms_1  |[0m 2020-01-13 04:55:16.973  INFO 6 --- [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=04ab941f-c40c-33d9-b968-680d9ec581e6
+[33mconfigserverms_1  |[0m 2020-01-13 04:55:18.607  INFO 6 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 6002 (http)
+[33mconfigserverms_1  |[0m 2020-01-13 04:55:18.669  INFO 6 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+[33mconfigserverms_1  |[0m 2020-01-13 04:55:18.670  INFO 6 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
+[33mconfigserverms_1  |[0m 2020-01-13 04:55:18.869  INFO 6 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+[33mconfigserverms_1  |[0m 2020-01-13 04:55:18.869  INFO 6 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 7935 ms
+[33mconfigserverms_1  |[0m 2020-01-13 04:55:23.008  INFO 6 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+[33mconfigserverms_1  |[0m 2020-01-13 04:55:24.278  INFO 6 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+[33mconfigserverms_1  |[0m 2020-01-13 04:55:24.570  INFO 6 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 6002 (http) with context path ''
+[33mconfigserverms_1  |[0m 2020-01-13 04:55:24.587  INFO 6 --- [           main] c.m.c.ConfigserverApplication            : Started ConfigserverApplication in 20.546 seconds (JVM running for 24.171)
+[33mconfigserverms_1  |[0m 
+[33mconfigserverms_1  |[0m   .   ____          _            __ _ _
+[33mconfigserverms_1  |[0m  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+[33mconfigserverms_1  |[0m ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+[33mconfigserverms_1  |[0m  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+[33mconfigserverms_1  |[0m   '  |____| .__|_| |_|_| |_\__, | / / / /
+[33mconfigserverms_1  |[0m  =========|_|==============|___/=/_/_/_/
+[33mconfigserverms_1  |[0m  :: Spring Boot ::        (v2.2.2.RELEASE)
+[33mconfigserverms_1  |[0m 
+[33mconfigserverms_1  |[0m 2020-01-13 05:02:17.141  INFO 6 --- [           main] c.m.c.ConfigserverApplication            : No active profile set, falling back to default profiles: default
+[33mconfigserverms_1  |[0m 2020-01-13 05:02:22.935  INFO 6 --- [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=04ab941f-c40c-33d9-b968-680d9ec581e6
+[33mconfigserverms_1  |[0m 2020-01-13 05:02:25.099  INFO 6 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 6002 (http)
+[33mconfigserverms_1  |[0m 2020-01-13 05:02:25.213  INFO 6 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+[33mconfigserverms_1  |[0m 2020-01-13 05:02:25.214  INFO 6 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
+[33mconfigserverms_1  |[0m 2020-01-13 05:02:25.338  INFO 6 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+[33mconfigserverms_1  |[0m 2020-01-13 05:02:25.338  INFO 6 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 8051 ms
+[33mconfigserverms_1  |[0m 2020-01-13 05:02:29.435  INFO 6 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+[33mconfigserverms_1  |[0m 2020-01-13 05:02:30.445  INFO 6 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+[33mconfigserverms_1  |[0m 2020-01-13 05:02:30.733  INFO 6 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 6002 (http) with context path ''
+[33mconfigserverms_1  |[0m 2020-01-13 05:02:30.739  INFO 6 --- [           main] c.m.c.ConfigserverApplication            : Started ConfigserverApplication in 20.307 seconds (JVM running for 23.092)
+[33mconfigserverms_1  |[0m 2020-01-13 05:02:55.678  INFO 6 --- [nio-6002-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+[33mconfigserverms_1  |[0m 2020-01-13 05:02:55.679  INFO 6 --- [nio-6002-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+[33mconfigserverms_1  |[0m 2020-01-13 05:02:55.728  INFO 6 --- [nio-6002-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 49 ms
+[33mconfigserverms_1  |[0m 2020-01-13 05:02:58.371  INFO 6 --- [nio-6002-exec-1] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: file:/tmp/config-repo-2607043441023568648/application.properties
+[33mconfigserverms_1  |[0m 
+[33mconfigserverms_1  |[0m   .   ____          _            __ _ _
+[33mconfigserverms_1  |[0m  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+[33mconfigserverms_1  |[0m ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+[33mconfigserverms_1  |[0m  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+[33mconfigserverms_1  |[0m   '  |____| .__|_| |_|_| |_\__, | / / / /
+[33mconfigserverms_1  |[0m  =========|_|==============|___/=/_/_/_/
+[33mconfigserverms_1  |[0m  :: Spring Boot ::        (v2.2.2.RELEASE)
+[33mconfigserverms_1  |[0m 
+[33mconfigserverms_1  |[0m 2020-01-13 05:19:28.206  INFO 6 --- [           main] c.m.c.ConfigserverApplication            : No active profile set, falling back to default profiles: default
+[33mconfigserverms_1  |[0m 2020-01-13 05:19:34.394  INFO 6 --- [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=04ab941f-c40c-33d9-b968-680d9ec581e6
+[33mconfigserverms_1  |[0m 2020-01-13 05:19:37.116  INFO 6 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 6002 (http)
+[33mconfigserverms_1  |[0m 2020-01-13 05:19:37.152  INFO 6 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+[33mconfigserverms_1  |[0m 2020-01-13 05:19:37.154  INFO 6 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
+[33mconfigserverms_1  |[0m 2020-01-13 05:19:37.404  INFO 6 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+[33mconfigserverms_1  |[0m 2020-01-13 05:19:37.405  INFO 6 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 9071 ms
+[33mconfigserverms_1  |[0m 2020-01-13 05:19:46.667  INFO 6 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+[33mconfigserverms_1  |[0m 2020-01-13 05:19:50.006  INFO 6 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+[33mconfigserverms_1  |[0m 2020-01-13 05:19:50.832  INFO 6 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 6002 (http) with context path ''
+[33mconfigserverms_1  |[0m 2020-01-13 05:19:50.949  INFO 6 --- [           main] c.m.c.ConfigserverApplication            : Started ConfigserverApplication in 31.58 seconds (JVM running for 34.677)
+[33mconfigserverms_1  |[0m 2020-01-13 05:19:54.385  INFO 6 --- [nio-6002-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+[33mconfigserverms_1  |[0m 2020-01-13 05:19:54.405  INFO 6 --- [nio-6002-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+[33mconfigserverms_1  |[0m 2020-01-13 05:19:54.463  INFO 6 --- [nio-6002-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 57 ms
+[33mconfigserverms_1  |[0m 2020-01-13 05:19:59.270  INFO 6 --- [nio-6002-exec-1] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: file:/tmp/config-repo-8749932068282242226/AccountMs.properties
+[33mconfigserverms_1  |[0m 2020-01-13 05:19:59.271  INFO 6 --- [nio-6002-exec-1] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: file:/tmp/config-repo-8749932068282242226/application.properties
+[33mconfigserverms_1  |[0m 2020-01-13 05:20:21.164  INFO 6 --- [nio-6002-exec-3] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: file:/tmp/config-repo-8749932068282242226/AccountMs.properties
+[33mconfigserverms_1  |[0m 2020-01-13 05:20:21.171  INFO 6 --- [nio-6002-exec-3] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: file:/tmp/config-repo-8749932068282242226/application.properties
+[33mconfigserverms_1  |[0m 2020-01-13 05:20:40.454  INFO 6 --- [nio-6002-exec-5] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: file:/tmp/config-repo-8749932068282242226/AccountMs.properties
+[33mconfigserverms_1  |[0m 2020-01-13 05:20:40.460  INFO 6 --- [nio-6002-exec-5] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: file:/tmp/config-repo-8749932068282242226/application.properties
+[33mconfigserverms_1  |[0m 2020-01-13 05:21:03.544  INFO 6 --- [nio-6002-exec-7] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: file:/tmp/config-repo-8749932068282242226/AccountMs.properties
+[33mconfigserverms_1  |[0m 2020-01-13 05:21:03.555  INFO 6 --- [nio-6002-exec-7] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: file:/tmp/config-repo-8749932068282242226/application.properties
+[33mconfigserverms_1  |[0m 
+[33mconfigserverms_1  |[0m   .   ____          _            __ _ _
+[33mconfigserverms_1  |[0m  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+[33mconfigserverms_1  |[0m ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+[33mconfigserverms_1  |[0m  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+[33mconfigserverms_1  |[0m   '  |____| .__|_| |_|_| |_\__, | / / / /
+[33mconfigserverms_1  |[0m  =========|_|==============|___/=/_/_/_/
+[33mconfigserverms_1  |[0m  :: Spring Boot ::        (v2.2.2.RELEASE)
+[33mconfigserverms_1  |[0m 
+[33mconfigserverms_1  |[0m 2020-01-13 05:35:54.735  INFO 6 --- [           main] c.m.c.ConfigserverApplication            : No active profile set, falling back to default profiles: default
+[33mconfigserverms_1  |[0m 2020-01-13 05:36:03.759  INFO 6 --- [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=04ab941f-c40c-33d9-b968-680d9ec581e6
+[33mconfigserverms_1  |[0m 2020-01-13 05:36:07.757  INFO 6 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 6002 (http)
+[33mconfigserverms_1  |[0m 2020-01-13 05:36:08.210  INFO 6 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+[33mconfigserverms_1  |[0m 2020-01-13 05:36:08.211  INFO 6 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
+[33mconfigserverms_1  |[0m 2020-01-13 05:36:08.868  INFO 6 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+[33mconfigserverms_1  |[0m 2020-01-13 05:36:08.868  INFO 6 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 13944 ms
+[33mconfigserverms_1  |[0m 2020-01-13 05:36:19.812  INFO 6 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+[33mconfigserverms_1  |[0m 2020-01-13 05:36:26.440  INFO 6 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+[33mconfigserverms_1  |[0m 2020-01-13 05:36:27.583  INFO 6 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 6002 (http) with context path ''
+[33mconfigserverms_1  |[0m 2020-01-13 05:36:27.609  INFO 6 --- [           main] c.m.c.ConfigserverApplication            : Started ConfigserverApplication in 44.427 seconds (JVM running for 48.744)
+[33mconfigserverms_1  |[0m 2020-01-13 05:36:33.336  INFO 6 --- [nio-6002-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+[33mconfigserverms_1  |[0m 2020-01-13 05:36:33.337  INFO 6 --- [nio-6002-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+[33mconfigserverms_1  |[0m 2020-01-13 05:36:33.361  INFO 6 --- [nio-6002-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 24 ms
+[33mconfigserverms_1  |[0m 2020-01-13 05:36:40.964  INFO 6 --- [nio-6002-exec-2] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: file:/tmp/config-repo-4014549685498301289/AccountMs.properties
+[33mconfigserverms_1  |[0m 2020-01-13 05:36:40.964  INFO 6 --- [nio-6002-exec-2] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: file:/tmp/config-repo-4014549685498301289/application.properties
+[33mconfigserverms_1  |[0m 2020-01-13 05:36:41.817  INFO 6 --- [nio-6002-exec-1] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: file:/tmp/config-repo-4014549685498301289/ProductMs.properties
+[33mconfigserverms_1  |[0m 2020-01-13 05:36:41.817  INFO 6 --- [nio-6002-exec-1] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: file:/tmp/config-repo-4014549685498301289/application.properties
+[33mconfigserverms_1  |[0m 2020-01-13 05:36:55.502  INFO 6 --- [nio-6002-exec-3] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: file:/tmp/config-repo-4014549685498301289/AccountMs.properties
+[33mconfigserverms_1  |[0m 2020-01-13 05:36:55.504  INFO 6 --- [nio-6002-exec-3] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: file:/tmp/config-repo-4014549685498301289/application.properties
+[33mconfigserverms_1  |[0m 2020-01-13 05:36:56.097  INFO 6 --- [nio-6002-exec-4] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: file:/tmp/config-repo-4014549685498301289/ProductMs.properties
+[33mconfigserverms_1  |[0m 2020-01-13 05:36:56.098  INFO 6 --- [nio-6002-exec-4] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: file:/tmp/config-repo-4014549685498301289/application.properties
+[33mconfigserverms_1  |[0m 2020-01-13 05:38:06.124  INFO 6 --- [nio-6002-exec-7] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: file:/tmp/config-repo-4014549685498301289/ProductMs.properties
+[33mconfigserverms_1  |[0m 2020-01-13 05:38:06.146  INFO 6 --- [nio-6002-exec-7] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: file:/tmp/config-repo-4014549685498301289/application.properties
+[33mconfigserverms_1  |[0m 2020-01-13 05:38:06.600  INFO 6 --- [nio-6002-exec-8] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: file:/tmp/config-repo-4014549685498301289/AccountMs.properties
+[33mconfigserverms_1  |[0m 2020-01-13 05:38:06.600  INFO 6 --- [nio-6002-exec-8] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: file:/tmp/config-repo-4014549685498301289/application.properties
+[33mconfigserverms_1  |[0m 2020-01-13 05:38:46.243  INFO 6 --- [nio-6002-exec-1] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: file:/tmp/config-repo-4014549685498301289/ProductMs.properties
+[33mconfigserverms_1  |[0m 2020-01-13 05:38:46.244  INFO 6 --- [nio-6002-exec-1] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: file:/tmp/config-repo-4014549685498301289/application.properties
+[33mconfigserverms_1  |[0m 2020-01-13 05:38:46.640  INFO 6 --- [nio-6002-exec-2] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: file:/tmp/config-repo-4014549685498301289/AccountMs.properties
+[33mconfigserverms_1  |[0m 2020-01-13 05:38:46.641  INFO 6 --- [nio-6002-exec-2] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: file:/tmp/config-repo-4014549685498301289/application.properties
+[33mconfigserverms_1  |[0m 
+[33mconfigserverms_1  |[0m   .   ____          _            __ _ _
+[33mconfigserverms_1  |[0m  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+[33mconfigserverms_1  |[0m ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+[33mconfigserverms_1  |[0m  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+[33mconfigserverms_1  |[0m   '  |____| .__|_| |_|_| |_\__, | / / / /
+[33mconfigserverms_1  |[0m  =========|_|==============|___/=/_/_/_/
+[33mconfigserverms_1  |[0m  :: Spring Boot ::        (v2.2.2.RELEASE)
+[33mconfigserverms_1  |[0m 
+[33mconfigserverms_1  |[0m 2020-01-13 05:40:48.140  INFO 6 --- [           main] c.m.c.ConfigserverApplication            : No active profile set, falling back to default profiles: default
+[33mconfigserverms_1  |[0m 2020-01-13 05:40:59.433  INFO 6 --- [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=04ab941f-c40c-33d9-b968-680d9ec581e6
+[33mconfigserverms_1  |[0m 2020-01-13 05:41:06.239  INFO 6 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 6002 (http)
+[33mconfigserverms_1  |[0m 2020-01-13 05:41:06.572  INFO 6 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+[33mconfigserverms_1  |[0m 2020-01-13 05:41:06.607  INFO 6 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
+[33mconfigserverms_1  |[0m 2020-01-13 05:41:07.601  INFO 6 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+[33mconfigserverms_1  |[0m 2020-01-13 05:41:07.619  INFO 6 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 19137 ms
+[33mconfigserverms_1  |[0m 2020-01-13 05:41:17.739  INFO 6 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+[33mconfigserverms_1  |[0m 2020-01-13 05:41:21.312  INFO 6 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+[33mconfigserverms_1  |[0m 2020-01-13 05:41:22.012  INFO 6 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 6002 (http) with context path ''
+[33mconfigserverms_1  |[0m 2020-01-13 05:41:22.040  INFO 6 --- [           main] c.m.c.ConfigserverApplication            : Started ConfigserverApplication in 52.359 seconds (JVM running for 66.456)
+[33mconfigserverms_1  |[0m 2020-01-13 05:41:23.129  INFO 6 --- [nio-6002-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+[33mconfigserverms_1  |[0m 2020-01-13 05:41:23.129  INFO 6 --- [nio-6002-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+[33mconfigserverms_1  |[0m 2020-01-13 05:41:23.165  INFO 6 --- [nio-6002-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 36 ms
+[33mconfigserverms_1  |[0m 2020-01-13 05:41:28.939  INFO 6 --- [nio-6002-exec-1] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: file:/tmp/config-repo-5253592735421193790/AccountMs.properties
+[33mconfigserverms_1  |[0m 2020-01-13 05:41:28.940  INFO 6 --- [nio-6002-exec-1] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: file:/tmp/config-repo-5253592735421193790/application.properties
+[33mconfigserverms_1  |[0m 2020-01-13 05:41:29.683  INFO 6 --- [nio-6002-exec-2] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: file:/tmp/config-repo-5253592735421193790/ProductMs.properties
+[33mconfigserverms_1  |[0m 2020-01-13 05:41:29.684  INFO 6 --- [nio-6002-exec-2] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: file:/tmp/config-repo-5253592735421193790/application.properties
+[33mconfigserverms_1  |[0m 2020-01-13 05:42:27.438  INFO 6 --- [nio-6002-exec-5] .c.s.e.MultipleJGitEnvironmentRepository : Fetched for remote master and found 1 updates
+[33mconfigserverms_1  |[0m 2020-01-13 05:42:27.549  INFO 6 --- [nio-6002-exec-5] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: file:/tmp/config-repo-5253592735421193790/AccountMs.properties
+[33mconfigserverms_1  |[0m 2020-01-13 05:42:27.550  INFO 6 --- [nio-6002-exec-5] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: file:/tmp/config-repo-5253592735421193790/application.properties
+[33mconfigserverms_1  |[0m 2020-01-13 05:42:28.072  INFO 6 --- [nio-6002-exec-6] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: file:/tmp/config-repo-5253592735421193790/ProductMs.properties
+[33mconfigserverms_1  |[0m 2020-01-13 05:42:28.072  INFO 6 --- [nio-6002-exec-6] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: file:/tmp/config-repo-5253592735421193790/application.properties
+[33mconfigserverms_1  |[0m 
+[33mconfigserverms_1  |[0m   .   ____          _            __ _ _
+[33mconfigserverms_1  |[0m  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+[33mconfigserverms_1  |[0m ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+[33mconfigserverms_1  |[0m  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+[33mconfigserverms_1  |[0m   '  |____| .__|_| |_|_| |_\__, | / / / /
+[33mconfigserverms_1  |[0m  =========|_|==============|___/=/_/_/_/
+[33mconfigserverms_1  |[0m  :: Spring Boot ::        (v2.2.2.RELEASE)
+[33mconfigserverms_1  |[0m 
+[33mconfigserverms_1  |[0m 2020-01-13 06:46:57.999  INFO 6 --- [           main] c.m.c.ConfigserverApplication            : No active profile set, falling back to default profiles: default
+[33mconfigserverms_1  |[0m 2020-01-13 06:47:04.070  INFO 6 --- [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=04ab941f-c40c-33d9-b968-680d9ec581e6
+[33mconfigserverms_1  |[0m 2020-01-13 06:47:08.695  INFO 6 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 6002 (http)
+[33mconfigserverms_1  |[0m 2020-01-13 06:47:08.783  INFO 6 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+[33mconfigserverms_1  |[0m 2020-01-13 06:47:08.784  INFO 6 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
+[33mconfigserverms_1  |[0m 2020-01-13 06:47:09.402  INFO 6 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+[33mconfigserverms_1  |[0m 2020-01-13 06:47:09.410  INFO 6 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 11273 ms
+[33mconfigserverms_1  |[0m 2020-01-13 06:47:18.358  INFO 6 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+[33mconfigserverms_1  |[0m 2020-01-13 06:47:21.286  INFO 6 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+[33mconfigserverms_1  |[0m 2020-01-13 06:47:21.684  INFO 6 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 6002 (http) with context path ''
+[33mconfigserverms_1  |[0m 2020-01-13 06:47:21.690  INFO 6 --- [           main] c.m.c.ConfigserverApplication            : Started ConfigserverApplication in 30.909 seconds (JVM running for 37.023)
+[36mzipkinms_1        |[0m 2020-01-13 04:23:47.353  INFO [-,,,] 6 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$f260d5d9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[36mzipkinms_1        |[0m                                     ********
+[36mzipkinms_1        |[0m                                   **        **
+[36mzipkinms_1        |[0m                                  *            *
+[36mzipkinms_1        |[0m                                 **            **
+[36mzipkinms_1        |[0m                                 **            **
+[36mzipkinms_1        |[0m                                  **          **
+[36mzipkinms_1        |[0m                                   **        **
+[36mzipkinms_1        |[0m                                     ********
+[36mzipkinms_1        |[0m                                       ****
+[36mzipkinms_1        |[0m                                       ****
+[36mzipkinms_1        |[0m         ****                          ****
+[36mzipkinms_1        |[0m      ******                           ****                                 ***
+[36mzipkinms_1        |[0m   ****************************************************************************
+[36mzipkinms_1        |[0m     *******                           ****                                 ***
+[36mzipkinms_1        |[0m         ****                          ****
+[36mzipkinms_1        |[0m                                        **
+[36mzipkinms_1        |[0m                                        **
+[36mzipkinms_1        |[0m 
+[36mzipkinms_1        |[0m 
+[36mzipkinms_1        |[0m              *****      **     *****     ** **       **     **   **
+[36mzipkinms_1        |[0m                **       **     **  *     ***         **     **** **
+[36mzipkinms_1        |[0m               **        **     *****     ****        **     **  ***
+[36mzipkinms_1        |[0m              ******     **     **        **  **      **     **   **
+[36mzipkinms_1        |[0m 
+[36mzipkinms_1        |[0m :: Powered by Spring Boot ::         (v2.1.11.RELEASE)
+[36mzipkinms_1        |[0m 
+[36mzipkinms_1        |[0m 2020-01-13 04:23:48.127  INFO [ZipkinServer,,,] 6 --- [           main] com.mssample.zipkin.ZipkinApplication    : No active profile set, falling back to default profiles: default
+[36mzipkinms_1        |[0m 2020-01-13 04:23:56.376  INFO [ZipkinServer,,,] 6 --- [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=8246837c-ca39-3385-b170-e2f602326a4d
+[36mzipkinms_1        |[0m 2020-01-13 04:23:57.572  INFO [ZipkinServer,,,] 6 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$f260d5d9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[36mzipkinms_1        |[0m 2020-01-13 04:24:00.331  INFO [ZipkinServer,,,] 6 --- [           main] io.undertow.servlet                      : Initializing Spring embedded WebApplicationContext
+[36mzipkinms_1        |[0m 2020-01-13 04:24:00.344  INFO [ZipkinServer,,,] 6 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 12126 ms
+[36mzipkinms_1        |[0m 2020-01-13 04:24:05.081  INFO [ZipkinServer,,,] 6 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+[36mzipkinms_1        |[0m 2020-01-13 04:24:06.752  INFO [ZipkinServer,,,] 6 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 18 endpoint(s) beneath base path '/actuator'
+[36mzipkinms_1        |[0m 2020-01-13 04:24:07.150  INFO [ZipkinServer,,,] 6 --- [           main] io.undertow                              : starting server: Undertow - 2.0.28.Final
+[36mzipkinms_1        |[0m 2020-01-13 04:24:07.169  INFO [ZipkinServer,,,] 6 --- [           main] org.xnio                                 : XNIO version 3.6.5.Final
+[36mzipkinms_1        |[0m 2020-01-13 04:24:07.193  INFO [ZipkinServer,,,] 6 --- [           main] org.xnio.nio                             : XNIO NIO Implementation Version 3.6.5.Final
+[36mzipkinms_1        |[0m 2020-01-13 04:24:07.256  INFO [ZipkinServer,,,] 6 --- [           main] org.jboss.threads                        : JBoss Threads version 2.3.2.Final
+[36mzipkinms_1        |[0m 2020-01-13 04:24:07.397  INFO [ZipkinServer,,,] 6 --- [           main] o.s.b.w.e.u.UndertowServletWebServer     : Undertow started on port(s) 6001 (http) with context path ''
+[36mzipkinms_1        |[0m 2020-01-13 04:24:07.401  INFO [ZipkinServer,,,] 6 --- [           main] com.mssample.zipkin.ZipkinApplication    : Started ZipkinApplication in 24.789 seconds (JVM running for 26.885)
+[36mzipkinms_1        |[0m SLF4J: Class path contains multiple SLF4J bindings.
+[36mzipkinms_1        |[0m SLF4J: Found binding in [jar:file:/zipkinms-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/logback-classic-1.2.3.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+[36mzipkinms_1        |[0m SLF4J: Found binding in [jar:file:/zipkinms-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/log4j-slf4j-impl-2.11.2.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+[36mzipkinms_1        |[0m SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+[36mzipkinms_1        |[0m SLF4J: Actual binding is of type [ch.qos.logback.classic.util.ContextSelectorStaticBinder]
+[36mzipkinms_1        |[0m 2020-01-13 04:48:12.560  INFO [-,,,] 8 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$f260d5d9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[36mzipkinms_1        |[0m                                     ********
+[36mzipkinms_1        |[0m                                   **        **
+[36mzipkinms_1        |[0m                                  *            *
+[36mzipkinms_1        |[0m                                 **            **
+[36mzipkinms_1        |[0m                                 **            **
+[36mzipkinms_1        |[0m                                  **          **
+[36mzipkinms_1        |[0m                                   **        **
+[36mzipkinms_1        |[0m                                     ********
+[36mzipkinms_1        |[0m                                       ****
+[36mzipkinms_1        |[0m                                       ****
+[36mzipkinms_1        |[0m         ****                          ****
+[36mzipkinms_1        |[0m      ******                           ****                                 ***
+[36mzipkinms_1        |[0m   ****************************************************************************
+[36mzipkinms_1        |[0m     *******                           ****                                 ***
+[36mzipkinms_1        |[0m         ****                          ****
+[36mzipkinms_1        |[0m                                        **
+[36mzipkinms_1        |[0m                                        **
+[36mzipkinms_1        |[0m 
+[36mzipkinms_1        |[0m 
+[36mzipkinms_1        |[0m              *****      **     *****     ** **       **     **   **
+[36mzipkinms_1        |[0m                **       **     **  *     ***         **     **** **
+[36mzipkinms_1        |[0m               **        **     *****     ****        **     **  ***
+[36mzipkinms_1        |[0m              ******     **     **        **  **      **     **   **
+[36mzipkinms_1        |[0m 
+[36mzipkinms_1        |[0m :: Powered by Spring Boot ::         (v2.1.11.RELEASE)
+[36mzipkinms_1        |[0m 
+[36mzipkinms_1        |[0m 2020-01-13 04:48:13.305  INFO [ZipkinServer,,,] 8 --- [           main] com.mssample.zipkin.ZipkinApplication    : No active profile set, falling back to default profiles: default
+[36mzipkinms_1        |[0m 2020-01-13 04:48:20.149  INFO [ZipkinServer,,,] 8 --- [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=8246837c-ca39-3385-b170-e2f602326a4d
+[36mzipkinms_1        |[0m 2020-01-13 04:48:21.238  INFO [ZipkinServer,,,] 8 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$f260d5d9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[36mzipkinms_1        |[0m 2020-01-13 04:48:24.956  INFO [ZipkinServer,,,] 8 --- [           main] io.undertow.servlet                      : Initializing Spring embedded WebApplicationContext
+[36mzipkinms_1        |[0m 2020-01-13 04:48:24.959  INFO [ZipkinServer,,,] 8 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 11497 ms
+[36mzipkinms_1        |[0m 2020-01-13 04:48:29.590  INFO [ZipkinServer,,,] 8 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+[36mzipkinms_1        |[0m 2020-01-13 04:48:30.829  INFO [ZipkinServer,,,] 8 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 18 endpoint(s) beneath base path '/actuator'
+[36mzipkinms_1        |[0m 2020-01-13 04:48:31.069  INFO [ZipkinServer,,,] 8 --- [           main] io.undertow                              : starting server: Undertow - 2.0.28.Final
+[36mzipkinms_1        |[0m 2020-01-13 04:48:31.090  INFO [ZipkinServer,,,] 8 --- [           main] org.xnio                                 : XNIO version 3.6.5.Final
+[36mzipkinms_1        |[0m 2020-01-13 04:48:31.109  INFO [ZipkinServer,,,] 8 --- [           main] org.xnio.nio                             : XNIO NIO Implementation Version 3.6.5.Final
+[36mzipkinms_1        |[0m 2020-01-13 04:48:31.248  INFO [ZipkinServer,,,] 8 --- [           main] org.jboss.threads                        : JBoss Threads version 2.3.2.Final
+[36mzipkinms_1        |[0m 2020-01-13 04:48:31.383  INFO [ZipkinServer,,,] 8 --- [           main] o.s.b.w.e.u.UndertowServletWebServer     : Undertow started on port(s) 6001 (http) with context path ''
+[36mzipkinms_1        |[0m 2020-01-13 04:48:31.387  INFO [ZipkinServer,,,] 8 --- [           main] com.mssample.zipkin.ZipkinApplication    : Started ZipkinApplication in 24.3 seconds (JVM running for 28.514)
+[36mzipkinms_1        |[0m SLF4J: Class path contains multiple SLF4J bindings.
+[36mzipkinms_1        |[0m SLF4J: Found binding in [jar:file:/zipkinms-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/logback-classic-1.2.3.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+[36mzipkinms_1        |[0m SLF4J: Found binding in [jar:file:/zipkinms-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/log4j-slf4j-impl-2.11.2.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+[36mzipkinms_1        |[0m SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+[36mzipkinms_1        |[0m SLF4J: Actual binding is of type [ch.qos.logback.classic.util.ContextSelectorStaticBinder]
+[36mzipkinms_1        |[0m 2020-01-13 04:55:08.862  INFO [-,,,] 6 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$468450b1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[36mzipkinms_1        |[0m                                     ********
+[36mzipkinms_1        |[0m                                   **        **
+[36mzipkinms_1        |[0m                                  *            *
+[36mzipkinms_1        |[0m                                 **            **
+[36mzipkinms_1        |[0m                                 **            **
+[36mzipkinms_1        |[0m                                  **          **
+[36mzipkinms_1        |[0m                                   **        **
+[36mzipkinms_1        |[0m                                     ********
+[36mzipkinms_1        |[0m                                       ****
+[36mzipkinms_1        |[0m                                       ****
+[36mzipkinms_1        |[0m         ****                          ****
+[36mzipkinms_1        |[0m      ******                           ****                                 ***
+[36mzipkinms_1        |[0m   ****************************************************************************
+[36mzipkinms_1        |[0m     *******                           ****                                 ***
+[36mzipkinms_1        |[0m         ****                          ****
+[36mzipkinms_1        |[0m                                        **
+[36mzipkinms_1        |[0m                                        **
+[36mzipkinms_1        |[0m 
+[36mzipkinms_1        |[0m 
+[36mzipkinms_1        |[0m              *****      **     *****     ** **       **     **   **
+[36mzipkinms_1        |[0m                **       **     **  *     ***         **     **** **
+[36mzipkinms_1        |[0m               **        **     *****     ****        **     **  ***
+[36mzipkinms_1        |[0m              ******     **     **        **  **      **     **   **
+[36mzipkinms_1        |[0m 
+[36mzipkinms_1        |[0m :: Powered by Spring Boot ::         (v2.1.11.RELEASE)
+[36mzipkinms_1        |[0m 
+[36mzipkinms_1        |[0m 2020-01-13 04:55:10.012  INFO [ZipkinServer,,,] 6 --- [           main] com.mssample.zipkin.ZipkinApplication    : No active profile set, falling back to default profiles: default
+[36mzipkinms_1        |[0m 2020-01-13 04:55:17.613  INFO [ZipkinServer,,,] 6 --- [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=8246837c-ca39-3385-b170-e2f602326a4d
+[36mzipkinms_1        |[0m 2020-01-13 04:55:18.803  INFO [ZipkinServer,,,] 6 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$468450b1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[36mzipkinms_1        |[0m 2020-01-13 04:55:21.600  INFO [ZipkinServer,,,] 6 --- [           main] io.undertow.servlet                      : Initializing Spring embedded WebApplicationContext
+[36mzipkinms_1        |[0m 2020-01-13 04:55:21.606  INFO [ZipkinServer,,,] 6 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 11469 ms
+[36mzipkinms_1        |[0m 2020-01-13 04:55:25.612  INFO [ZipkinServer,,,] 6 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+[36mzipkinms_1        |[0m 2020-01-13 04:55:27.444  INFO [ZipkinServer,,,] 6 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 18 endpoint(s) beneath base path '/actuator'
+[36mzipkinms_1        |[0m 2020-01-13 04:55:27.757  INFO [ZipkinServer,,,] 6 --- [           main] io.undertow                              : starting server: Undertow - 2.0.28.Final
+[36mzipkinms_1        |[0m 2020-01-13 04:55:27.780  INFO [ZipkinServer,,,] 6 --- [           main] org.xnio                                 : XNIO version 3.6.5.Final
+[36mzipkinms_1        |[0m 2020-01-13 04:55:27.797  INFO [ZipkinServer,,,] 6 --- [           main] org.xnio.nio                             : XNIO NIO Implementation Version 3.6.5.Final
+[36mzipkinms_1        |[0m 2020-01-13 04:55:27.857  INFO [ZipkinServer,,,] 6 --- [           main] org.jboss.threads                        : JBoss Threads version 2.3.2.Final
+[36mzipkinms_1        |[0m 2020-01-13 04:55:28.010  INFO [ZipkinServer,,,] 6 --- [           main] o.s.b.w.e.u.UndertowServletWebServer     : Undertow started on port(s) 6001 (http) with context path ''
+[36mzipkinms_1        |[0m 2020-01-13 04:55:28.017  INFO [ZipkinServer,,,] 6 --- [           main] com.mssample.zipkin.ZipkinApplication    : Started ZipkinApplication in 24.398 seconds (JVM running for 27.675)
+[36mzipkinms_1        |[0m SLF4J: Class path contains multiple SLF4J bindings.
+[36mzipkinms_1        |[0m SLF4J: Found binding in [jar:file:/zipkinms-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/logback-classic-1.2.3.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+[36mzipkinms_1        |[0m SLF4J: Found binding in [jar:file:/zipkinms-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/log4j-slf4j-impl-2.11.2.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+[36mzipkinms_1        |[0m SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+[36mzipkinms_1        |[0m SLF4J: Actual binding is of type [ch.qos.logback.classic.util.ContextSelectorStaticBinder]
+[36mzipkinms_1        |[0m 2020-01-13 05:02:16.232  INFO [-,,,] 6 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$6334020b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[36mzipkinms_1        |[0m                                     ********
+[36mzipkinms_1        |[0m                                   **        **
+[36mzipkinms_1        |[0m                                  *            *
+[36mzipkinms_1        |[0m                                 **            **
+[36mzipkinms_1        |[0m                                 **            **
+[36mzipkinms_1        |[0m                                  **          **
+[36mzipkinms_1        |[0m                                   **        **
+[36mzipkinms_1        |[0m                                     ********
+[36mzipkinms_1        |[0m                                       ****
+[36mzipkinms_1        |[0m                                       ****
+[36mzipkinms_1        |[0m         ****                          ****
+[36mzipkinms_1        |[0m      ******                           ****                                 ***
+[36mzipkinms_1        |[0m   ****************************************************************************
+[36mzipkinms_1        |[0m     *******                           ****                                 ***
+[36mzipkinms_1        |[0m         ****                          ****
+[36mzipkinms_1        |[0m                                        **
+[36mzipkinms_1        |[0m                                        **
+[36mzipkinms_1        |[0m 
+[36mzipkinms_1        |[0m 
+[36mzipkinms_1        |[0m              *****      **     *****     ** **       **     **   **
+[36mzipkinms_1        |[0m                **       **     **  *     ***         **     **** **
+[36mzipkinms_1        |[0m               **        **     *****     ****        **     **  ***
+[36mzipkinms_1        |[0m              ******     **     **        **  **      **     **   **
+[36mzipkinms_1        |[0m 
+[36mzipkinms_1        |[0m :: Powered by Spring Boot ::         (v2.1.11.RELEASE)
+[36mzipkinms_1        |[0m 
+[36mzipkinms_1        |[0m 2020-01-13 05:02:17.195  INFO [ZipkinServer,,,] 6 --- [           main] com.mssample.zipkin.ZipkinApplication    : No active profile set, falling back to default profiles: default
+[36mzipkinms_1        |[0m 2020-01-13 05:02:24.069  INFO [ZipkinServer,,,] 6 --- [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=8246837c-ca39-3385-b170-e2f602326a4d
+[36mzipkinms_1        |[0m 2020-01-13 05:02:25.762  INFO [ZipkinServer,,,] 6 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$6334020b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[36mzipkinms_1        |[0m 2020-01-13 05:02:28.530  INFO [ZipkinServer,,,] 6 --- [           main] io.undertow.servlet                      : Initializing Spring embedded WebApplicationContext
+[36mzipkinms_1        |[0m 2020-01-13 05:02:28.539  INFO [ZipkinServer,,,] 6 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 11217 ms
+[36mzipkinms_1        |[0m 2020-01-13 05:02:32.012  INFO [ZipkinServer,,,] 6 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+[36mzipkinms_1        |[0m 2020-01-13 05:02:33.800  INFO [ZipkinServer,,,] 6 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 18 endpoint(s) beneath base path '/actuator'
+[36mzipkinms_1        |[0m 2020-01-13 05:02:34.105  INFO [ZipkinServer,,,] 6 --- [           main] io.undertow                              : starting server: Undertow - 2.0.28.Final
+[36mzipkinms_1        |[0m 2020-01-13 05:02:34.142  INFO [ZipkinServer,,,] 6 --- [           main] org.xnio                                 : XNIO version 3.6.5.Final
+[36mzipkinms_1        |[0m 2020-01-13 05:02:34.185  INFO [ZipkinServer,,,] 6 --- [           main] org.xnio.nio                             : XNIO NIO Implementation Version 3.6.5.Final
+[36mzipkinms_1        |[0m 2020-01-13 05:02:34.307  INFO [ZipkinServer,,,] 6 --- [           main] org.jboss.threads                        : JBoss Threads version 2.3.2.Final
+[36mzipkinms_1        |[0m 2020-01-13 05:02:34.651  INFO [ZipkinServer,,,] 6 --- [           main] o.s.b.w.e.u.UndertowServletWebServer     : Undertow started on port(s) 6001 (http) with context path ''
+[36mzipkinms_1        |[0m 2020-01-13 05:02:34.673  INFO [ZipkinServer,,,] 6 --- [           main] com.mssample.zipkin.ZipkinApplication    : Started ZipkinApplication in 23.757 seconds (JVM running for 25.692)
+[36mzipkinms_1        |[0m SLF4J: Class path contains multiple SLF4J bindings.
+[36mzipkinms_1        |[0m SLF4J: Found binding in [jar:file:/zipkinms-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/logback-classic-1.2.3.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+[36mzipkinms_1        |[0m SLF4J: Found binding in [jar:file:/zipkinms-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/log4j-slf4j-impl-2.11.2.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+[36mzipkinms_1        |[0m SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+[36mzipkinms_1        |[0m SLF4J: Actual binding is of type [ch.qos.logback.classic.util.ContextSelectorStaticBinder]
+[36mzipkinms_1        |[0m 2020-01-13 05:19:24.774  INFO [-,,,] 6 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$1d18fe5c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[36mzipkinms_1        |[0m                                     ********
+[36mzipkinms_1        |[0m                                   **        **
+[36mzipkinms_1        |[0m                                  *            *
+[36mzipkinms_1        |[0m                                 **            **
+[36mzipkinms_1        |[0m                                 **            **
+[36mzipkinms_1        |[0m                                  **          **
+[36mzipkinms_1        |[0m                                   **        **
+[36mzipkinms_1        |[0m                                     ********
+[36mzipkinms_1        |[0m                                       ****
+[36mzipkinms_1        |[0m                                       ****
+[36mzipkinms_1        |[0m         ****                          ****
+[36mzipkinms_1        |[0m      ******                           ****                                 ***
+[36mzipkinms_1        |[0m   ****************************************************************************
+[36mzipkinms_1        |[0m     *******                           ****                                 ***
+[36mzipkinms_1        |[0m         ****                          ****
+[36mzipkinms_1        |[0m                                        **
+[36mzipkinms_1        |[0m                                        **
+[36mzipkinms_1        |[0m 
+[36mzipkinms_1        |[0m 
+[36mzipkinms_1        |[0m              *****      **     *****     ** **       **     **   **
+[36mzipkinms_1        |[0m                **       **     **  *     ***         **     **** **
+[36mzipkinms_1        |[0m               **        **     *****     ****        **     **  ***
+[36mzipkinms_1        |[0m              ******     **     **        **  **      **     **   **
+[36mzipkinms_1        |[0m 
+[36mzipkinms_1        |[0m :: Powered by Spring Boot ::         (v2.1.11.RELEASE)
+[36mzipkinms_1        |[0m 
+[36mzipkinms_1        |[0m 2020-01-13 05:19:25.538  INFO [ZipkinServer,,,] 6 --- [           main] com.mssample.zipkin.ZipkinApplication    : No active profile set, falling back to default profiles: default
+[36mzipkinms_1        |[0m 2020-01-13 05:19:33.894  INFO [ZipkinServer,,,] 6 --- [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=8246837c-ca39-3385-b170-e2f602326a4d
+[36mzipkinms_1        |[0m 2020-01-13 05:19:36.406  INFO [ZipkinServer,,,] 6 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$1d18fe5c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[36mzipkinms_1        |[0m 2020-01-13 05:19:42.315  INFO [ZipkinServer,,,] 6 --- [           main] io.undertow.servlet                      : Initializing Spring embedded WebApplicationContext
+[36mzipkinms_1        |[0m 2020-01-13 05:19:42.317  INFO [ZipkinServer,,,] 6 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 16655 ms
+[36mzipkinms_1        |[0m 2020-01-13 05:19:51.821  INFO [ZipkinServer,,,] 6 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+[36mzipkinms_1        |[0m 2020-01-13 05:19:54.757  INFO [ZipkinServer,,,] 6 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 18 endpoint(s) beneath base path '/actuator'
+[36mzipkinms_1        |[0m 2020-01-13 05:19:55.183  INFO [ZipkinServer,,,] 6 --- [           main] io.undertow                              : starting server: Undertow - 2.0.28.Final
+[36mzipkinms_1        |[0m 2020-01-13 05:19:55.230  INFO [ZipkinServer,,,] 6 --- [           main] org.xnio                                 : XNIO version 3.6.5.Final
+[36mzipkinms_1        |[0m 2020-01-13 05:19:55.271  INFO [ZipkinServer,,,] 6 --- [           main] org.xnio.nio                             : XNIO NIO Implementation Version 3.6.5.Final
+[36mzipkinms_1        |[0m 2020-01-13 05:19:55.414  INFO [ZipkinServer,,,] 6 --- [           main] org.jboss.threads                        : JBoss Threads version 2.3.2.Final
+[36mzipkinms_1        |[0m 2020-01-13 05:19:55.680  INFO [ZipkinServer,,,] 6 --- [           main] o.s.b.w.e.u.UndertowServletWebServer     : Undertow started on port(s) 6001 (http) with context path ''
+[36mzipkinms_1        |[0m 2020-01-13 05:19:55.683  INFO [ZipkinServer,,,] 6 --- [           main] com.mssample.zipkin.ZipkinApplication    : Started ZipkinApplication in 36.743 seconds (JVM running for 39.37)
+[36mzipkinms_1        |[0m SLF4J: Class path contains multiple SLF4J bindings.
+[36mzipkinms_1        |[0m SLF4J: Found binding in [jar:file:/zipkinms-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/logback-classic-1.2.3.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+[36mzipkinms_1        |[0m SLF4J: Found binding in [jar:file:/zipkinms-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/log4j-slf4j-impl-2.11.2.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+[36mzipkinms_1        |[0m SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+[36mzipkinms_1        |[0m SLF4J: Actual binding is of type [ch.qos.logback.classic.util.ContextSelectorStaticBinder]
+[36mzipkinms_1        |[0m 2020-01-13 05:35:53.598  INFO [-,,,] 6 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$469fcdad] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[36mzipkinms_1        |[0m                                     ********
+[36mzipkinms_1        |[0m                                   **        **
+[36mzipkinms_1        |[0m                                  *            *
+[36mzipkinms_1        |[0m                                 **            **
+[36mzipkinms_1        |[0m                                 **            **
+[36mzipkinms_1        |[0m                                  **          **
+[36mzipkinms_1        |[0m                                   **        **
+[36mzipkinms_1        |[0m                                     ********
+[36mzipkinms_1        |[0m                                       ****
+[36mzipkinms_1        |[0m                                       ****
+[36mzipkinms_1        |[0m         ****                          ****
+[36mzipkinms_1        |[0m      ******                           ****                                 ***
+[36mzipkinms_1        |[0m   ****************************************************************************
+[36mzipkinms_1        |[0m     *******                           ****                                 ***
+[36mzipkinms_1        |[0m         ****                          ****
+[36mzipkinms_1        |[0m                                        **
+[36mzipkinms_1        |[0m                                        **
+[36mzipkinms_1        |[0m 
+[36mzipkinms_1        |[0m 
+[36mzipkinms_1        |[0m              *****      **     *****     ** **       **     **   **
+[36mzipkinms_1        |[0m                **       **     **  *     ***         **     **** **
+[36mzipkinms_1        |[0m               **        **     *****     ****        **     **  ***
+[36mzipkinms_1        |[0m              ******     **     **        **  **      **     **   **
+[36mzipkinms_1        |[0m 
+[36mzipkinms_1        |[0m :: Powered by Spring Boot ::         (v2.1.11.RELEASE)
+[36mzipkinms_1        |[0m 
+[36mzipkinms_1        |[0m 2020-01-13 05:35:55.035  INFO [ZipkinServer,,,] 6 --- [           main] com.mssample.zipkin.ZipkinApplication    : No active profile set, falling back to default profiles: default
+[36mzipkinms_1        |[0m 2020-01-13 05:36:06.829  INFO [ZipkinServer,,,] 6 --- [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=8246837c-ca39-3385-b170-e2f602326a4d
+[36mzipkinms_1        |[0m 2020-01-13 05:36:08.584  INFO [ZipkinServer,,,] 6 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$469fcdad] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[36mzipkinms_1        |[0m 2020-01-13 05:36:12.311  INFO [ZipkinServer,,,] 6 --- [           main] io.undertow.servlet                      : Initializing Spring embedded WebApplicationContext
+[36mzipkinms_1        |[0m 2020-01-13 05:36:12.327  INFO [ZipkinServer,,,] 6 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 17154 ms
+[36mzipkinms_1        |[0m 2020-01-13 05:36:21.408  INFO [ZipkinServer,,,] 6 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+[36mzipkinms_1        |[0m 2020-01-13 05:36:29.771  INFO [ZipkinServer,,,] 6 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 18 endpoint(s) beneath base path '/actuator'
+[36mzipkinms_1        |[0m 2020-01-13 05:36:30.708  INFO [ZipkinServer,,,] 6 --- [           main] io.undertow                              : starting server: Undertow - 2.0.28.Final
+[36mzipkinms_1        |[0m 2020-01-13 05:36:30.811  INFO [ZipkinServer,,,] 6 --- [           main] org.xnio                                 : XNIO version 3.6.5.Final
+[36mzipkinms_1        |[0m 2020-01-13 05:36:30.869  INFO [ZipkinServer,,,] 6 --- [           main] org.xnio.nio                             : XNIO NIO Implementation Version 3.6.5.Final
+[36mzipkinms_1        |[0m 2020-01-13 05:36:31.128  INFO [ZipkinServer,,,] 6 --- [           main] org.jboss.threads                        : JBoss Threads version 2.3.2.Final
+[36mzipkinms_1        |[0m 2020-01-13 05:36:31.440  INFO [ZipkinServer,,,] 6 --- [           main] o.s.b.w.e.u.UndertowServletWebServer     : Undertow started on port(s) 6001 (http) with context path ''
+[36mzipkinms_1        |[0m 2020-01-13 05:36:31.467  INFO [ZipkinServer,,,] 6 --- [           main] com.mssample.zipkin.ZipkinApplication    : Started ZipkinApplication in 47.478 seconds (JVM running for 51.325)
+[36mzipkinms_1        |[0m SLF4J: Class path contains multiple SLF4J bindings.
+[36mzipkinms_1        |[0m SLF4J: Found binding in [jar:file:/zipkinms-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/logback-classic-1.2.3.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+[36mzipkinms_1        |[0m SLF4J: Found binding in [jar:file:/zipkinms-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/log4j-slf4j-impl-2.11.2.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+[36mzipkinms_1        |[0m SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+[36mzipkinms_1        |[0m SLF4J: Actual binding is of type [ch.qos.logback.classic.util.ContextSelectorStaticBinder]
+[36mzipkinms_1        |[0m 2020-01-13 05:40:45.609  INFO [-,,,] 6 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$3482272e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[36mzipkinms_1        |[0m                                     ********
+[36mzipkinms_1        |[0m                                   **        **
+[36mzipkinms_1        |[0m                                  *            *
+[36mzipkinms_1        |[0m                                 **            **
+[36mzipkinms_1        |[0m                                 **            **
+[36mzipkinms_1        |[0m                                  **          **
+[36mzipkinms_1        |[0m                                   **        **
+[36mzipkinms_1        |[0m                                     ********
+[36mzipkinms_1        |[0m                                       ****
+[36mzipkinms_1        |[0m                                       ****
+[36mzipkinms_1        |[0m         ****                          ****
+[36mzipkinms_1        |[0m      ******                           ****                                 ***
+[36mzipkinms_1        |[0m   ****************************************************************************
+[36mzipkinms_1        |[0m     *******                           ****                                 ***
+[36mzipkinms_1        |[0m         ****                          ****
+[36mzipkinms_1        |[0m                                        **
+[36mzipkinms_1        |[0m                                        **
+[36mzipkinms_1        |[0m 
+[36mzipkinms_1        |[0m 
+[36mzipkinms_1        |[0m              *****      **     *****     ** **       **     **   **
+[36mzipkinms_1        |[0m                **       **     **  *     ***         **     **** **
+[36mzipkinms_1        |[0m               **        **     *****     ****        **     **  ***
+[36mzipkinms_1        |[0m              ******     **     **        **  **      **     **   **
+[36mzipkinms_1        |[0m 
+[36mzipkinms_1        |[0m :: Powered by Spring Boot ::         (v2.1.11.RELEASE)
+[36mzipkinms_1        |[0m 
+[36mzipkinms_1        |[0m 2020-01-13 05:40:46.997  INFO [ZipkinServer,,,] 6 --- [           main] com.mssample.zipkin.ZipkinApplication    : No active profile set, falling back to default profiles: default
+[36mzipkinms_1        |[0m 2020-01-13 05:41:02.673  INFO [ZipkinServer,,,] 6 --- [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=8246837c-ca39-3385-b170-e2f602326a4d
+[36mzipkinms_1        |[0m 2020-01-13 05:41:06.392  INFO [ZipkinServer,,,] 6 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$3482272e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[36mzipkinms_1        |[0m 2020-01-13 05:41:13.714  INFO [ZipkinServer,,,] 6 --- [           main] io.undertow.servlet                      : Initializing Spring embedded WebApplicationContext
+[36mzipkinms_1        |[0m 2020-01-13 05:41:13.735  INFO [ZipkinServer,,,] 6 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 26443 ms
+[36mzipkinms_1        |[0m 2020-01-13 05:41:23.863  INFO [ZipkinServer,,,] 6 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+[36mzipkinms_1        |[0m 2020-01-13 05:41:27.352  INFO [ZipkinServer,,,] 6 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 18 endpoint(s) beneath base path '/actuator'
+[36mzipkinms_1        |[0m 2020-01-13 05:41:27.843  INFO [ZipkinServer,,,] 6 --- [           main] io.undertow                              : starting server: Undertow - 2.0.28.Final
+[36mzipkinms_1        |[0m 2020-01-13 05:41:27.905  INFO [ZipkinServer,,,] 6 --- [           main] org.xnio                                 : XNIO version 3.6.5.Final
+[36mzipkinms_1        |[0m 2020-01-13 05:41:27.953  INFO [ZipkinServer,,,] 6 --- [           main] org.xnio.nio                             : XNIO NIO Implementation Version 3.6.5.Final
+[36mzipkinms_1        |[0m 2020-01-13 05:41:28.142  INFO [ZipkinServer,,,] 6 --- [           main] org.jboss.threads                        : JBoss Threads version 2.3.2.Final
+[36mzipkinms_1        |[0m 2020-01-13 05:41:28.403  INFO [ZipkinServer,,,] 6 --- [           main] o.s.b.w.e.u.UndertowServletWebServer     : Undertow started on port(s) 6001 (http) with context path ''
+[36mzipkinms_1        |[0m 2020-01-13 05:41:28.406  INFO [ZipkinServer,,,] 6 --- [           main] com.mssample.zipkin.ZipkinApplication    : Started ZipkinApplication in 58.008 seconds (JVM running for 72.993)
+[36mzipkinms_1        |[0m SLF4J: Class path contains multiple SLF4J bindings.
+[36mzipkinms_1        |[0m SLF4J: Found binding in [jar:file:/zipkinms-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/logback-classic-1.2.3.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+[36mzipkinms_1        |[0m SLF4J: Found binding in [jar:file:/zipkinms-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/log4j-slf4j-impl-2.11.2.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+[36mzipkinms_1        |[0m SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+[36mzipkinms_1        |[0m SLF4J: Actual binding is of type [ch.qos.logback.classic.util.ContextSelectorStaticBinder]
+[36mzipkinms_1        |[0m 2020-01-13 06:46:57.022  INFO [-,,,] 6 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$468450b1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[36mzipkinms_1        |[0m                                     ********
+[36mzipkinms_1        |[0m                                   **        **
+[36mzipkinms_1        |[0m                                  *            *
+[36mzipkinms_1        |[0m                                 **            **
+[36mzipkinms_1        |[0m                                 **            **
+[36mzipkinms_1        |[0m                                  **          **
+[36mzipkinms_1        |[0m                                   **        **
+[36mzipkinms_1        |[0m                                     ********
+[36mzipkinms_1        |[0m                                       ****
+[36mzipkinms_1        |[0m                                       ****
+[36mzipkinms_1        |[0m         ****                          ****
+[36mzipkinms_1        |[0m      ******                           ****                                 ***
+[36mzipkinms_1        |[0m   ****************************************************************************
+[36mzipkinms_1        |[0m     *******                           ****                                 ***
+[36mzipkinms_1        |[0m         ****                          ****
+[36mzipkinms_1        |[0m                                        **
+[36mzipkinms_1        |[0m                                        **
+[36mzipkinms_1        |[0m 
+[36mzipkinms_1        |[0m 
+[36mzipkinms_1        |[0m              *****      **     *****     ** **       **     **   **
+[36mzipkinms_1        |[0m                **       **     **  *     ***         **     **** **
+[36mzipkinms_1        |[0m               **        **     *****     ****        **     **  ***
+[36mzipkinms_1        |[0m              ******     **     **        **  **      **     **   **
+[36mzipkinms_1        |[0m 
+[36mzipkinms_1        |[0m :: Powered by Spring Boot ::         (v2.1.11.RELEASE)
+[36mzipkinms_1        |[0m 
+[36mzipkinms_1        |[0m 2020-01-13 06:46:57.979  INFO [ZipkinServer,,,] 6 --- [           main] com.mssample.zipkin.ZipkinApplication    : No active profile set, falling back to default profiles: default
+[36mzipkinms_1        |[0m 2020-01-13 06:47:08.056  INFO [ZipkinServer,,,] 6 --- [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=8246837c-ca39-3385-b170-e2f602326a4d
+[36mzipkinms_1        |[0m 2020-01-13 06:47:10.051  INFO [ZipkinServer,,,] 6 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$468450b1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[36mzipkinms_1        |[0m 2020-01-13 06:47:14.694  INFO [ZipkinServer,,,] 6 --- [           main] io.undertow.servlet                      : Initializing Spring embedded WebApplicationContext
+[36mzipkinms_1        |[0m 2020-01-13 06:47:14.701  INFO [ZipkinServer,,,] 6 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 16613 ms
+[36mzipkinms_1        |[0m 2020-01-13 06:47:21.383  INFO [ZipkinServer,,,] 6 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+[36mzipkinms_1        |[0m 2020-01-13 06:47:23.037  INFO [ZipkinServer,,,] 6 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 18 endpoint(s) beneath base path '/actuator'
+[36mzipkinms_1        |[0m 2020-01-13 06:47:23.352  INFO [ZipkinServer,,,] 6 --- [           main] io.undertow                              : starting server: Undertow - 2.0.28.Final
+[36mzipkinms_1        |[0m 2020-01-13 06:47:23.403  INFO [ZipkinServer,,,] 6 --- [           main] org.xnio                                 : XNIO version 3.6.5.Final
+[36mzipkinms_1        |[0m 2020-01-13 06:47:23.426  INFO [ZipkinServer,,,] 6 --- [           main] org.xnio.nio                             : XNIO NIO Implementation Version 3.6.5.Final
+[36mzipkinms_1        |[0m 2020-01-13 06:47:23.569  INFO [ZipkinServer,,,] 6 --- [           main] org.jboss.threads                        : JBoss Threads version 2.3.2.Final
+[36mzipkinms_1        |[0m 2020-01-13 06:47:23.733  INFO [ZipkinServer,,,] 6 --- [           main] o.s.b.w.e.u.UndertowServletWebServer     : Undertow started on port(s) 6001 (http) with context path ''
+[36mzipkinms_1        |[0m 2020-01-13 06:47:23.736  INFO [ZipkinServer,,,] 6 --- [           main] com.mssample.zipkin.ZipkinApplication    : Started ZipkinApplication in 33.095 seconds (JVM running for 39.069)
+[32mdb_1              |[0m 2020-01-13T06:48:29.863110Z 0 [Note] Event Scheduler: Loaded 0 events
+[32mdb_1              |[0m 2020-01-13T06:48:29.863492Z 0 [Note] mysqld: ready for connections.
+[32mdb_1              |[0m Version: '5.7.28'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  MySQL Community Server (GPL)
+[35maccountms_1       |[0m 
+[35maccountms_1       |[0m   .   ____          _            __ _ _
+[35maccountms_1       |[0m  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+[35maccountms_1       |[0m ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+[35maccountms_1       |[0m  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+[35maccountms_1       |[0m   '  |____| .__|_| |_|_| |_\__, | / / / /
+[35maccountms_1       |[0m  =========|_|==============|___/=/_/_/_/
+[35maccountms_1       |[0m  :: Spring Boot ::        (v2.2.2.RELEASE)
+[35maccountms_1       |[0m 
+[35maccountms_1       |[0m 2020-01-13 06:48:37.517  INFO [AccountMs,,,] 6 --- [           main] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://configserverms:6002
+[31mproductms_1       |[0m 
+[31mproductms_1       |[0m   .   ____          _            __ _ _
+[31mproductms_1       |[0m  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+[31mproductms_1       |[0m ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+[31mproductms_1       |[0m  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+[31mproductms_1       |[0m   '  |____| .__|_| |_|_| |_\__, | / / / /
+[31mproductms_1       |[0m  =========|_|==============|___/=/_/_/_/
+[31mproductms_1       |[0m  :: Spring Boot ::        (v2.2.2.RELEASE)
+[31mproductms_1       |[0m 
+[33mconfigserverms_1  |[0m 2020-01-13 06:48:38.597  INFO 6 --- [nio-6002-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+[33mconfigserverms_1  |[0m 2020-01-13 06:48:38.598  INFO 6 --- [nio-6002-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+[33mconfigserverms_1  |[0m 2020-01-13 06:48:38.617  INFO 6 --- [nio-6002-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 19 ms
+[31mproductms_1       |[0m 2020-01-13 06:48:38.809  INFO [ProductMs,,,] 6 --- [           main] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://configserverms:6002
+[33mconfigserverms_1  |[0m 2020-01-13 06:48:43.869  INFO 6 --- [nio-6002-exec-1] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: file:/tmp/config-repo-1867218850468211685/AccountMs-production.properties
+[33mconfigserverms_1  |[0m 2020-01-13 06:48:43.870  INFO 6 --- [nio-6002-exec-1] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: file:/tmp/config-repo-1867218850468211685/application-production.properties
+[33mconfigserverms_1  |[0m 2020-01-13 06:48:43.872  INFO 6 --- [nio-6002-exec-1] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: file:/tmp/config-repo-1867218850468211685/AccountMs.properties
+[33mconfigserverms_1  |[0m 2020-01-13 06:48:43.876  INFO 6 --- [nio-6002-exec-1] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: file:/tmp/config-repo-1867218850468211685/application.properties
+[35maccountms_1       |[0m 2020-01-13 06:48:44.361  INFO [AccountMs,,,] 6 --- [           main] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=AccountMs, profiles=[production], label=null, version=c441be2101d7e9c2f2b5be857922c5fc8d64141b, state=null
+[35maccountms_1       |[0m 2020-01-13 06:48:44.385  INFO [AccountMs,,,] 6 --- [           main] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-configClient'}, BootstrapPropertySource {name='bootstrapProperties-https://github.com/APOORVES/mssample_config.git/AccountMs-production.properties'}, BootstrapPropertySource {name='bootstrapProperties-https://github.com/APOORVES/mssample_config.git/application-production.properties'}, BootstrapPropertySource {name='bootstrapProperties-https://github.com/APOORVES/mssample_config.git/AccountMs.properties'}, BootstrapPropertySource {name='bootstrapProperties-https://github.com/APOORVES/mssample_config.git/application.properties'}]
+[33mconfigserverms_1  |[0m 2020-01-13 06:48:44.568  INFO 6 --- [nio-6002-exec-2] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: file:/tmp/config-repo-1867218850468211685/ProductMs-production.properties
+[33mconfigserverms_1  |[0m 2020-01-13 06:48:44.582  INFO 6 --- [nio-6002-exec-2] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: file:/tmp/config-repo-1867218850468211685/application-production.properties
+[33mconfigserverms_1  |[0m 2020-01-13 06:48:44.584  INFO 6 --- [nio-6002-exec-2] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: file:/tmp/config-repo-1867218850468211685/ProductMs.properties
+[33mconfigserverms_1  |[0m 2020-01-13 06:48:44.586  INFO 6 --- [nio-6002-exec-2] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: file:/tmp/config-repo-1867218850468211685/application.properties
+[31mproductms_1       |[0m 2020-01-13 06:48:44.701  INFO [ProductMs,,,] 6 --- [           main] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=ProductMs, profiles=[production], label=null, version=c441be2101d7e9c2f2b5be857922c5fc8d64141b, state=null
+[31mproductms_1       |[0m 2020-01-13 06:48:44.704  INFO [ProductMs,,,] 6 --- [           main] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-configClient'}, BootstrapPropertySource {name='bootstrapProperties-https://github.com/APOORVES/mssample_config.git/ProductMs-production.properties'}, BootstrapPropertySource {name='bootstrapProperties-https://github.com/APOORVES/mssample_config.git/application-production.properties'}, BootstrapPropertySource {name='bootstrapProperties-https://github.com/APOORVES/mssample_config.git/ProductMs.properties'}, BootstrapPropertySource {name='bootstrapProperties-https://github.com/APOORVES/mssample_config.git/application.properties'}]
+[35maccountms_1       |[0m LOGBACK: No context given for c.q.l.core.rolling.SizeAndTimeBasedRollingPolicy@1908143486
+[35maccountms_1       |[0m 2020-01-13 06:48:44.963  INFO [AccountMs,,,] 6 --- [           main] com.mssample.account.AccountApplication  : The following profiles are active: production
+[31mproductms_1       |[0m LOGBACK: No context given for c.q.l.core.rolling.SizeAndTimeBasedRollingPolicy@1568059495
+[31mproductms_1       |[0m 2020-01-13 06:48:45.262  INFO [ProductMs,,,] 6 --- [           main] com.mssample.product.ProductApplication  : The following profiles are active: production
+[35maccountms_1       |[0m 2020-01-13 06:48:50.706  INFO [AccountMs,,,] 6 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[35maccountms_1       |[0m 2020-01-13 06:48:51.119  INFO [AccountMs,,,] 6 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 286ms. Found 1 JPA repository interfaces.
+[31mproductms_1       |[0m 2020-01-13 06:48:52.936  INFO [ProductMs,,,] 6 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[31mproductms_1       |[0m 2020-01-13 06:48:53.334  INFO [ProductMs,,,] 6 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 305ms. Found 3 JPA repository interfaces.
+[35maccountms_1       |[0m 2020-01-13 06:48:53.841  INFO [AccountMs,,,] 6 --- [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=128a375f-98b0-3fa1-9f2c-0fdb630abb88
+[31mproductms_1       |[0m 2020-01-13 06:48:56.178  INFO [ProductMs,,,] 6 --- [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=fa1904e0-11ee-3257-88db-0fe8d7b844fd
+[35maccountms_1       |[0m 2020-01-13 06:48:57.644  INFO [AccountMs,,,] 6 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[31mproductms_1       |[0m 2020-01-13 06:48:59.554  INFO [ProductMs,,,] 6 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[35maccountms_1       |[0m 2020-01-13 06:49:00.006  INFO [AccountMs,,,] 6 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 5001 (http)
+[35maccountms_1       |[0m 2020-01-13 06:49:00.150  INFO [AccountMs,,,] 6 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+[35maccountms_1       |[0m 2020-01-13 06:49:00.152  INFO [AccountMs,,,] 6 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
+[35maccountms_1       |[0m 2020-01-13 06:49:00.813  INFO [AccountMs,,,] 6 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+[35maccountms_1       |[0m 2020-01-13 06:49:00.837  INFO [AccountMs,,,] 6 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 15624 ms
+[31mproductms_1       |[0m 2020-01-13 06:49:03.083  INFO [ProductMs,,,] 6 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 5000 (http)
+Gracefully stopping... (press Ctrl+C again to force)

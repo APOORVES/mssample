@@ -13,7 +13,6 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.mssample.product.account.User;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

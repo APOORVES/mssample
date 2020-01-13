@@ -3,10 +3,9 @@ package com.mssample.product.model;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -42,13 +41,13 @@ public class Product {
 	@Column(name="DELIVERY_CHARGE")
 	private double deliveryCharge;
 	@JsonBackReference
-	@OneToOne(mappedBy = "product")
+	@OneToOne(mappedBy = "product", cascade = CascadeType.ALL)
 	private Deal deal;
 	@Transient
 	public double getOfferPrice() {
 		return price*deal.getDiscount();
 	}
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="SELLER_ID")
 	private Seller seller;
 	@Transient
@@ -59,7 +58,7 @@ public class Product {
 		}
 		return "";
 	}
-	@OneToMany(mappedBy = "productId")
+	@OneToMany(mappedBy = "productId",cascade = CascadeType.ALL)
 	private List<Rating> ratings;
 
 

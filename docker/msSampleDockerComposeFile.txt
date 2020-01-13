@@ -1,0 +1,38 @@
+version: "3.7"
+services:
+  configserverms:
+    image: apoorves/configserverms:latest
+    ports:
+    - "6002:6002"
+  zipkinms:
+    image: apoorves/zipkinms:latest
+    ports:
+    - "6001:6001"
+  productms:
+    image: apoorves/productms:latest
+    ports:
+    - "5000:5000"
+    depends_on:
+      - "configserverms"
+      - "db"
+    restart: on-failure
+  accountms:
+    image: apoorves/accountms:latest
+    ports:
+    - "5001:5001"
+    depends_on:
+      - "configserverms"
+      - "db"
+    restart: on-failure
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'msdb'
+      MYSQL_USER: 'admin'
+      MYSQL_PASSWORD: 'admin'
+      MYSQL_ROOT_PASSWORD: 'admin'
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'

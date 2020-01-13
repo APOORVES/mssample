@@ -17,7 +17,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import com.mssample.account.exception.UserNotFoundException;
-import com.mssample.product.account.User;
+import com.mssample.product.model.User;
 
 @Service
 public class MsSampleUserDetailsService implements UserDetailsService {

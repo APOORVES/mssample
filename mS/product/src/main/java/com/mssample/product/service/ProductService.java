@@ -11,7 +11,6 @@ import com.mssample.product.exception.DealNotFoundException;
 import com.mssample.product.exception.ProductNotFoundException;
 import com.mssample.product.model.Deal;
 import com.mssample.product.model.Product;
-import com.mssample.product.model.PurchaseHistory;
 import com.mssample.product.repo.DealRepository;
 import com.mssample.product.repo.ProductRepository;
 import com.mssample.product.repo.PurchaseHistoryRepository;
@@ -50,7 +49,7 @@ public class ProductService {
 		List<Product> products = deals.stream().map(deal->deal.getProduct()).collect(Collectors.toList());
 		log.debug("Size of Product List="+(products!=null?products.size():null));
 		if(products == null || products.size() == 0)
-			throw new DealNotFoundException("No Deals Found matching the search criteria");
+			throw new DealNotFoundException("No Deals Found for today");
 		return products;
 	}
 

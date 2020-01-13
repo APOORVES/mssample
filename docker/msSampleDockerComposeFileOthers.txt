@@ -1,0 +1,10 @@
+version: "3.7"
+services:
+  zipkinms:
+    image: apoorves/zipkinms:latest
+    ports:
+    - "6001:6001"
+  configserverms:
+    image: apoorves/configserverms:latest
+    ports:
+    - "6002:6002"

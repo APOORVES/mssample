@@ -4,12 +4,11 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.mssample.account.model.User;
-
 import com.mssample.product.model.Deal;
 import com.mssample.product.model.Product;
 import com.mssample.product.model.Rating;
 import com.mssample.product.model.Seller;
+import com.mssample.product.model.User;
 
 public class AllData {
 
@@ -19,15 +18,13 @@ public class AllData {
 		products.add(createProduct1()); 
 		products.add(createProduct2()); 
 		products.add(createProduct3()); 
-		products.add(createProduct4()); 
-		products.add(createProduct5()); 
 		return products; 
 	  }
 	 	
 	
 	@SuppressWarnings("deprecation")
 	public static Product createProduct1() {
-		Deal deal1 = new Deal("1", "Product1 Deal", null, new Timestamp(2019, 1, 1, 0, 0, 0, 0), new Timestamp(2020, 1, 1, 0, 0, 0, 0), 10);
+		Deal deal1 = new Deal("1", "Product1 Deal", null, new Timestamp(2019-1900, 1, 1, 0, 0, 0, 0), new Timestamp(2021-1900, 1, 1, 0, 0, 0, 0), 10);
 		Seller seller1 = new Seller("1", "SellerOne", 5);
 		Rating rating1 = new Rating("1", "user1", 4.5, "Very Good Product", "1");
 		Rating rating2 = new Rating("2", "user2", 4.0, "Good Product", "1");
@@ -42,7 +39,7 @@ public class AllData {
 	}
 	@SuppressWarnings("deprecation")
 	public static Product createProduct2() {
-		Deal deal2 = new Deal("2", "Product2 Deal", null, new Timestamp(2019, 1, 1, 0, 0, 0, 0), new Timestamp(2020, 1, 1, 0, 0, 0, 0), 20);
+		Deal deal2 = new Deal("2", "Product2 Deal", null, new Timestamp(2019-1900, 0, 1, 0, 0, 0, 0), new Timestamp(2021-1900, 0, 1, 0, 0, 0, 0), 20);
 		Seller seller2 = new Seller("2", "SellerTwo", 10);
 		Rating rating1 = new Rating("4", "user1", 4.5, "Very Good Product", "2");
 		Rating rating2 = new Rating("5", "user2", 4.0, "Good Product", "2");
@@ -68,18 +65,6 @@ public class AllData {
 		ratings3.add(rating3);
 		Product product3 = new Product("3", "Product3", "Product Short Description 3", "Product Description 3", "Category1", 10, 2, deal3, seller3, ratings3);
 		return product3;
-	}
-	public static Product createProduct4() {
-		Deal deal4 = new Deal();
-		Seller seller4 = new Seller();
-		Product product4 = new Product();
-		return product4;
-	}
-	public static Product createProduct5() {
-		Deal deal5 = new Deal();
-		Seller seller5 = new Seller();
-		Product product5 = new Product();
-		return product5;
 	}
 	
 	  public static List<User> createUsers() { 

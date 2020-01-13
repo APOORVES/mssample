@@ -2,6 +2,7 @@ package com.mssample.account.rest;
 
 import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.ArgumentMatchers.any;
 
 import java.util.List;
 
@@ -26,8 +27,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mssample.account.model.User;
 import com.mssample.account.service.AccountService;
 import com.mssample.account.testdata.AllData;
-
-import static org.mockito.BDDMockito.any;
 
 import lombok.extern.slf4j.Slf4j;
 

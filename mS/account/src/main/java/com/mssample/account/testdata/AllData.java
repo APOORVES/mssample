@@ -8,7 +8,7 @@ import com.mssample.account.model.User;
 public class AllData {
 
 	
-
+		
 	  public static List<User> createUsers() { 
 		List<User> users = new ArrayList<User>(); 
 		users.add(createUser1()); 

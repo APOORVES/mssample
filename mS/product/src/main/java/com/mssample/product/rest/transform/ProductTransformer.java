@@ -22,7 +22,7 @@ public class ProductTransformer {
 												resultMap.put("description", product.getDescription());
 												resultMap.put("category", product.getCategory());
 												resultMap.put("price", ""+product.getPrice());
-												resultMap.put("discount", ""+product.getDeal().getDiscount());
+												resultMap.put("discount", product.getDeal()!=null?""+product.getDeal().getDiscount():"");
 												resultMap.put("deliveryCharge", ""+product.getDeliveryCharge());
 												return resultMap;
 											}
@@ -40,7 +40,7 @@ public class ProductTransformer {
 												resultMap.put("displayName", product.getDisplayName());
 												resultMap.put("shortDesc", product.getShortDesc());
 												resultMap.put("category", product.getCategory());
-												resultMap.put("discount", ""+product.getDeal().getDiscount());
+												resultMap.put("discount", product.getDeal()!=null?""+product.getDeal().getDiscount():"");
 												return resultMap;
 											}
 								  ).collect(Collectors.toList());

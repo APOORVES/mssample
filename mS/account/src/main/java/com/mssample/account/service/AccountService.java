@@ -2,7 +2,6 @@ package com.mssample.account.service;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.mssample.account.exception.EmailAlreadyRegisteredException;
@@ -17,8 +16,8 @@ import lombok.extern.slf4j.Slf4j;
 public class AccountService {
 	@Autowired 
 	AccountRepository accountRepository;
-	@Autowired
-	PasswordEncoder passwordEncoder;
+//	@Autowired
+//	PasswordEncoder passwordEncoder;
 	
 	public boolean findUser(User user){
 		log.debug("Trying login for user Name =" + user.getName());
@@ -42,7 +41,11 @@ public class AccountService {
 		{
 			throw new EmailAlreadyRegisteredException("Email you mentioned is already registered");
 		}
-		user.setPassword(passwordEncoder.encode(user.getPassword()));
+		if(accountRepository.findByName(user.getName()) != null)
+		{
+			throw new EmailAlreadyRegisteredException("User Name you mentioned is already registered");
+		}
+		user.setPassword(user.getPassword());
 		accountRepository.saveAndFlush(user);
 		log.debug("Saved user");
 		return true;
@@ -58,8 +61,8 @@ public class AccountService {
 			throw new EmailAlreadyRegisteredException("Email you mentioned is already registered in the system");
 		}
 		User userinDB = accountRepository.findByName(user.getName());
-		BeanUtils.copyProperties(user, userinDB);
-		userinDB.setPassword(passwordEncoder.encode(userinDB.getPassword()));
+		BeanUtils.copyProperties(user, userinDB, "userId");
+		userinDB.setPassword(userinDB.getPassword());
 		accountRepository.saveAndFlush(userinDB);
 		log.debug("Updated user");
 		return true;

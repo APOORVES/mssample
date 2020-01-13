@@ -1,4 +1,4 @@
-package com.mssample.account.model;
+package com.mssample.product.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -22,6 +22,9 @@ import lombok.Setter;
 @Table(name = "USER")
 @Getter @Setter @NoArgsConstructor @AllArgsConstructor
 public class User {
+	public User(String userName) {
+		this.name=userName;
+	}
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name="USER_ID")
@@ -33,7 +36,7 @@ public class User {
 	private String email;
 	@Pattern(regexp = "[a-zA-Z_]+", message = "Name cannot have numbers or special characters")
 	@NotNull(message = "User Name cannot be empty")
-	@Column(name="USER_NAME")
+	@Column(name="USER_NAME", unique = true)
 	private String name;
 	@NotNull(message = "Password cannot be empty")
 	@Column(name="PASSWORD")

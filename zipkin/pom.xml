@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.mssample</groupId>
-	<artifactId>zipkin</artifactId>
+	<artifactId>zipkinms</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>zipkin</name>
 	<description>Demo project for Spring Boot</description>
@@ -75,6 +75,37 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>com.spotify</groupId>
+				<artifactId>docker-maven-plugin</artifactId>
+				<version>1.2.1</version>
+				<configuration>
+					<googleContainerRegistryEnabled>false</googleContainerRegistryEnabled>
+					<useMavenSettingsForAuth>true</useMavenSettingsForAuth>
+					<imageName>apoorves/${project.artifactId}</imageName>
+					<maintainer>Apoorve Shrivastava</maintainer>
+			        <imageTags>
+			           <imageTag>${project.version}</imageTag>
+			           <imageTag>latest</imageTag>
+			        </imageTags>
+			        <resources>
+			           <resource>
+			             <targetPath>/</targetPath>
+			             <directory>${project.build.directory}</directory>
+			             <include>${project.artifactId}-${project.version}.jar</include>
+			           </resource>
+			        </resources>
+			        <runs>
+			        	<run>cd /</run>
+			        	<run>mkdir repos</run>
+			        	<run>mkdir /repos/logs</run>
+			        </runs>					
+        			<baseImage>openjdk:8u151-jre-alpine</baseImage>
+        			<cmd>java -jar /${project.artifactId}-${project.version}.jar</cmd>
+					<serverId>docker-hub</serverId>
+					<registryUrl>registry.hub.docker.com/apoorves</registryUrl>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
