@@ -1,6 +1,6 @@
 version: "3.7"
 services:
-  zipkinms:
+  zipkin:
     image: apoorves/zipkinms:latest
     ports:
     - "6001:6001"

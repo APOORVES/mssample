@@ -4,7 +4,7 @@ services:
     image: apoorves/configserverms:latest
     ports:
     - "6002:6002"
-  zipkinms:
+  zipkin:
     image: apoorves/zipkinms:latest
     ports:
     - "6001:6001"
