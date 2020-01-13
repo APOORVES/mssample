@@ -8,7 +8,7 @@
 		<version>2.2.2.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.mssample.</groupId>
+	<groupId>com.mssample</groupId>
 	<artifactId>account</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>account</name>
