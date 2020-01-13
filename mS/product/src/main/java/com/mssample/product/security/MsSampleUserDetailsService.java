@@ -50,6 +50,7 @@ public class MsSampleUserDetailsService implements UserDetailsService {
         if (user == null) {
             throw new UserNotFoundException(userName);
         }
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
         List<String> userRoles=Arrays.asList("USER");
         return new MsSampleUserDetails(user, userRoles);
     }
