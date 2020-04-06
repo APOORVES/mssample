@@ -1,11 +1,11 @@
-package com.mssample.account.repo;
+package com.mssample.cart.repo;
 
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.mssample.account.model.User;
+import com.mssample.cart.model.User;
 
 @Repository
 public interface AccountRepository extends JpaRepository<User, String> {

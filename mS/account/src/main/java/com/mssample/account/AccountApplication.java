@@ -10,11 +10,8 @@ import com.mssample.account.model.User;
 import com.mssample.account.repo.AccountRepository;
 import com.mssample.account.testdata.AllData;
 
-import lombok.extern.slf4j.Slf4j;
-
 @SpringBootApplication
 public class AccountApplication {
-	
 
 	public static void main(String[] args) {
 		ConfigurableApplicationContext context = SpringApplication.run(AccountApplication.class, args);
@@ -25,17 +22,14 @@ public class AccountApplication {
 			AccountRepository accountRepository = context.getBean(AccountRepository.class);
 			List<User> users = AllData.createUsers();
 			for(User user:users) {
-				try
-				{
+				try{
 					user.setUserId(0);
 					accountRepository.saveAndFlush(user);
 				}
-				catch(Exception e)
-				{
+				catch(Exception e){
 					//Do Nothing
 				}
 			}
 	}
-	
 
 }

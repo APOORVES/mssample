@@ -36,8 +36,6 @@ public class MsSampleUserDetailsService implements UserDetailsService {
  
     @Override
     public UserDetails loadUserByUsername(String userName) {
-      Map<String, String> uriVariables = new HashMap<String, String>();
-
       String plainCreds = this.userName+":"+this.password;
       byte[] plainCredsBytes = plainCreds.getBytes();
       byte[] base64CredsBytes = Base64.encodeBase64(plainCredsBytes);
