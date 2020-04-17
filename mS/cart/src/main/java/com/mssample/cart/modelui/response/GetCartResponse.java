@@ -2,23 +2,28 @@ package com.mssample.cart.modelui.response;
 
 import java.util.List;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
-@Data @AllArgsConstructor @NoArgsConstructor
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter @Setter @AllArgsConstructor @NoArgsConstructor
+@JsonInclude(Include. NON_NULL)
 public class GetCartResponse extends CartResponse {
 	private List<CartDetail> cartDetails;
 	private double totalPrice;
 	private double totalDeliveryCharge;
 	private double grandTotal;
-	public GetCartResponse(List<CartDetail> cartDetails) {
+	public GetCartResponse(List<CartDetail> cartDetails, double freeDeliveryThreshold) {
 		this.cartDetails = cartDetails;
 		cartDetails.stream().forEach(cd->{
-			this.totalPrice += cd.getCartOfferPrice();
-			this.totalDeliveryCharge += cd.getDeliveryCharge();
+			this.totalPrice += cd.getCartOfferPrice()*cd.getQuantity();
+			this.totalDeliveryCharge += cd.getDeliveryCharge()*cd.getQuantity();
 		});
-		if(this.totalPrice >= 1000)
+		if(this.totalPrice >= freeDeliveryThreshold)
 			this.totalDeliveryCharge = 0;
 		this.grandTotal = this.totalPrice+this.totalDeliveryCharge;
 	}

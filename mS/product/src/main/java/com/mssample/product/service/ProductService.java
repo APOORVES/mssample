@@ -35,6 +35,14 @@ public class ProductService {
 		return products;
 	}
 
+	public List<Product> searchProduct(String displayName, String productCategory){
+		List<Product> products = productRepository.findByDisplayNameAndCategory(displayName, productCategory); 
+		log.debug("Size of Product List="+(products!=null?products.size():null));
+		if(products == null || products.size() == 0)
+			throw new ProductNotFoundException("No Products Found matching the search criteria");
+		return products;
+	}
+	
 	public List<Product> searchProductExact(String displayName){
 		List<Product> products = productRepository.findByDisplayName(displayName); 
 		log.debug("Size of Product List="+(products!=null?products.size():null));

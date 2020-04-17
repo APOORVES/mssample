@@ -1,10 +1,15 @@
 package com.mssample.cart.modelui.response;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
-@Data @AllArgsConstructor @NoArgsConstructor
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Setter @Getter @AllArgsConstructor @NoArgsConstructor
+@JsonInclude(Include. NON_NULL)
 public class CartCountResponse extends CartResponse {
 	private int cartCount;
 }

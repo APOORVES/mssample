@@ -33,14 +33,15 @@ public class AccountController {
 		log.info("login invoked for userName="+user.getName());
 		Boolean result = accountService.findUser(user); 
 		log.info("login successfull for userName="+user.getName() + " result=" +result);
-		ResponseEntity<String> response = new ResponseEntity<String>("Seller:"+user.getName(), HttpStatus.OK);
+		ResponseEntity<String> response = new ResponseEntity<String>("Seller:"+user.getName(),
+				HttpStatus.OK);
 		return response;
 	}
 
 	@PostMapping(value = "/signup", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity signup(@Valid @RequestBody User user, Errors errors){
 		log.info("signup invoked for user = "+user.getName());
-		boolean result;
+		User result;
 		if (errors.hasErrors()) {
 			String response = "";
 			response = errors.getAllErrors().stream().map(ObjectError::getDefaultMessage)
@@ -50,8 +51,7 @@ public class AccountController {
 			error.setErrorMessage(response);
 			return ResponseEntity.ok(error);
 		}
-		else
-		{
+		else{
 			if(!user.getPassword().equals(user.getConfirmPassword()))
 			{
 				throw new PasswordsNotSameException("password and confirm password not same.");
@@ -59,13 +59,14 @@ public class AccountController {
 			result = accountService.createUser(user);
 		}
 		log.info("signup created account result="+result);
-		ResponseEntity<String> responseHttp = new ResponseEntity<String>("User Successfully Registered", HttpStatus.OK);
+		ResponseEntity<Long> responseHttp = new ResponseEntity<Long>(user.getUserId(), HttpStatus.OK);
 		log.info("signup returning response="+responseHttp);
 		return responseHttp;
 	}
 
 	@PostMapping(value = "/{username}/update", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity accountUpdate(@Valid @RequestBody User user, @PathVariable("username") String username, Errors errors){
+	public ResponseEntity accountUpdate(@Valid @RequestBody User user, @PathVariable("username") 
+	String username, Errors errors){
 		log.info("accountUpdate for username="+username);
 		user.setName(username);
 		if (errors.hasErrors()) {
@@ -79,7 +80,8 @@ public class AccountController {
 		}
 		boolean result = accountService.updateUser(user); 
 		log.info("sucessfully udpated the account for username="+user.getName() + "result=" + result);
-		ResponseEntity<String> response = new ResponseEntity<String>("Successfully Updated", HttpStatus.OK);
+		ResponseEntity<String> response = new ResponseEntity<String>("Successfully Updated", 
+				HttpStatus.OK);
 		return response;
 	}
 

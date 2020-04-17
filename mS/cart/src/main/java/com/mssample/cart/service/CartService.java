@@ -7,26 +7,31 @@ import static com.mssample.cart.common.CartConstants.UI_ERROR_TOO_MANY_ITEMS_OF_
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
 
+import com.mssample.account.model.User;
 import com.mssample.cart.exception.CartException;
+import com.mssample.cart.extclient.AccountClient;
 import com.mssample.cart.model.Cart;
 import com.mssample.cart.model.CartItem;
-import com.mssample.cart.model.User;
-import com.mssample.cart.repo.AccountRepository;
 import com.mssample.cart.repo.CartRepository;
 
+@Service
 public class CartService {
 
 	@Autowired
 	private CartRepository cartRepository;
 	@Autowired
-	private AccountRepository accountRepository;
+	private AccountClient accountClient;
+	@Value("${com.mssample.cart.config.maxProductQuantity}")
+	private String maxProductQuantity;
 
 	public Cart getCart(String userName) {
-		Optional<User> user = accountRepository.findByName(userName);
+		Optional<User> user = accountClient.findByName(userName);
 		if(!user.isPresent())
 			throw new CartException(UI_ERROR_INVALID_USER);
-		Optional<Cart> cart = cartRepository.findByUserId(user.get().getUserId());
+		Optional<Cart> cart = cartRepository.findByUserName(user.get().getName());
 		if(!cart.isPresent()) {
 			throw new CartException(UI_ERROR_NO_EXISTING_CART);
 		}
@@ -50,7 +55,7 @@ public class CartService {
 
 	public void validateCartItems(Cart cart) {
 		for(CartItem cartItem: cart.getCartSelections()) {
-			if(cartItem.getQuantity() > 4) {
+			if(cartItem.getQuantity() > Integer.parseInt(maxProductQuantity)) {
 				throw new CartException(UI_ERROR_TOO_MANY_ITEMS_OF_ONE_TYPE);
 			}
 		}

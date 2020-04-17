@@ -24,6 +24,14 @@ services:
       - "configserverms"
       - "db"
     restart: on-failure
+  cartms:
+    image: apoorves/accountms:latest
+    ports:
+    - "5002:5002"
+    depends_on:
+      - "configserverms"
+      - "db"
+    restart: on-failure
   db:
     image: mysql:5.7
     restart: always

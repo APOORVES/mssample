@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 import javax.validation.constraints.Email;
@@ -21,12 +22,13 @@ import lombok.Setter;
 @Entity
 @Table(name = "USER")
 @Getter @Setter @NoArgsConstructor @AllArgsConstructor
+@SequenceGenerator(name="user_seq", initialValue=1, allocationSize=100)
 public class User {
 	public User(String userName) {
 		this.name=userName;
 	}
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_seq")
 	@Column(name="USER_ID")
 	@JsonIgnore
 	private long userId;

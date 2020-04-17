@@ -23,7 +23,7 @@ public class AccountApplication {
 			List<User> users = AllData.createUsers();
 			for(User user:users) {
 				try{
-					user.setUserId(0);
+					user.setUserId(null);
 					accountRepository.saveAndFlush(user);
 				}
 				catch(Exception e){

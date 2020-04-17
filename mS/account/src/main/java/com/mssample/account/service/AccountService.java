@@ -35,18 +35,19 @@ public class AccountService {
 		return returnedUser.get();
 	}
 
-	public boolean createUser(User user) {
+	public User createUser(User user) {
 		log.debug("Saving user =" + user);
-		if(!accountRepository.findByEmail(user.getEmail()).isPresent()){
+		if(accountRepository.findByEmail(user.getEmail()).isPresent()){
 			throw new EmailAlreadyRegisteredException("Email you mentioned is already registered");
 		}
-		if(!accountRepository.findByName(user.getName()).isPresent()){
+		if(accountRepository.findByName(user.getName()).isPresent()){
 			throw new EmailAlreadyRegisteredException("User Name you mentioned is already registered");
 		}
+		user.setUserId(null);
 		user.setPassword(user.getPassword());
 		accountRepository.saveAndFlush(user);
 		log.debug("Saved user");
-		return true;
+		return user;
 	}
 
 	public boolean updateUser(User user) {

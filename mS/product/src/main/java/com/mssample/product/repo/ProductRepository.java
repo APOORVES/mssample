@@ -11,5 +11,6 @@ import com.mssample.product.model.Product;
 public interface ProductRepository extends JpaRepository<Product, String> {
 	List<Product> findByDisplayNameLike(String displayName);
 	List<Product> findByDisplayName(String displayName);
+	List<Product> findByDisplayNameAndCategory(String displayName, String productCategory);
 
 }

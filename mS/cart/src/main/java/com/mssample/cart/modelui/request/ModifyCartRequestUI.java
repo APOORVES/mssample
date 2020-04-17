@@ -1,21 +1,24 @@
 package com.mssample.cart.modelui.request;
 
+
 import javax.validation.constraints.Max;
 import javax.validation.constraints.NotNull;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-@Data @NoArgsConstructor @AllArgsConstructor
+@Getter @Setter @NoArgsConstructor @AllArgsConstructor
 public class ModifyCartRequestUI {
-	@NotNull(message = "{com.mssample.cart.productName.notEmpty}")
+	//These messages are overridden in property files
+	@NotNull(message = "Product name cannot be empty")
 	private String productName;
-	@NotNull(message = "{com.mssample.cart.sellerName.notEmpty}")
+	@NotNull(message = "Seller name cannot be empty")
 	private String sellerName;
-	@Max(value = 4, message = "{com.mssample.cart.quantity.max}")
-	@NotNull(message = "{com.mssample.cart.quantity.notEmpty}")
+	@Max(value = 4, message = "Maximum allowed quantity for any item is 4")
+	@NotNull(message = "Quantity cannot be empty")
 	private int quantity;
-	@NotNull(message = "{com.mssample.cart.cartOfferPrice.notEmpty}")
+	@NotNull(message = "Cart offer price cannot be empty")
 	private double cartOfferPrice;
 }

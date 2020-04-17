@@ -76,6 +76,25 @@ public class ProductController {
 		return response;
 	}
 
+	@GetMapping(value = "/fetchproduct/{productname}", produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Product> fetchProduct(@PathVariable("productname") String productName){
+		log.info("searchproduct invoked with productName="+productName);
+		List<Product> products = productService.searchProduct(productName); 
+		log.info("searchproduct returning productList="+products);
+		ResponseEntity<Product> response = new ResponseEntity<Product>(products.get(0), HttpStatus.OK);
+		return response;
+	}
+
+	@GetMapping(value = "/fetchproduct/{productcategory}/{productname}", produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Product> fetchProduct(@PathVariable("productcategory") String productCategory, @PathVariable("productname") String productName){
+		log.info("searchproduct invoked with productName="+productName + " productcategory="+productCategory);
+		List<Product> products = productService.searchProduct(productName, productCategory); 
+		log.info("searchproduct returning productList="+products);
+		ResponseEntity<Product> response = new ResponseEntity<Product>(products.get(0), HttpStatus.OK);
+		return response;
+	}
+
+
 }
 
 
