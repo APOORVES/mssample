@@ -2,8 +2,6 @@ package com.mssample.cart.service;
 
 import static com.mssample.cart.common.CartConstants.GUEST_INDICATOR;
 import static com.mssample.cart.common.CartConstants.GUEST_MARKER;
-import static com.mssample.cart.common.CartConstants.UI_ERROR_INVALID_USER;
-import static com.mssample.cart.common.CartConstants.UI_ERROR_PRODUCT_NOT_PRESENT_IN_CART;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +17,6 @@ import org.springframework.stereotype.Service;
 
 import com.mssample.account.model.User;
 import com.mssample.cart.aop.EnableLogging;
-import com.mssample.cart.exception.CartException;
 import com.mssample.cart.extclient.AccountClient;
 import com.mssample.cart.extclient.ProductClient;
 import com.mssample.cart.model.Cart;
