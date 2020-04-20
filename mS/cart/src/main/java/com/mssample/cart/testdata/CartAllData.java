@@ -9,6 +9,11 @@ import com.mssample.cart.model.CartItem;
 import com.mssample.product.model.Product;
 import com.mssample.product.model.Seller;
 
+/**
+ * Data generator for Cart. Functions are self explanatory
+ * @author Apoorve
+ *
+ */
 public class CartAllData {
 
 	

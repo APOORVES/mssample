@@ -1,6 +1,10 @@
 package com.mssample.product.rest;
 
+import static org.hamcrest.CoreMatchers.containsString;
+import static org.hamcrest.CoreMatchers.is;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 
 import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
@@ -61,15 +65,24 @@ class ProductControllerTest {
 		Mockito.when(productService.searchProduct(products.get(0).getDisplayName())).thenReturn(resultList);
 		Mockito.when(productTransformer.transformProducts(resultList)).thenCallRealMethod();
 		RequestBuilder requestBuilder = MockMvcRequestBuilders.get("/searchproduct/"+products.get(0).getDisplayName()).accept(MediaType.APPLICATION_JSON);
-		MvcResult result = mockMvc.perform(requestBuilder).andReturn();
-		MockHttpServletResponse response = result.getResponse();
-		ObjectMapper mapper = new ObjectMapper();
-		ByteArrayOutputStream out = new ByteArrayOutputStream();
-		mapper.writeValue(out, productTransformer.transformProducts(resultList));
-		byte[] data = out.toByteArray();
-		log.debug("new String(data)="+new String(data));
-		log.debug("response.getContentAsString()="+response.getContentAsString());
-		assertEquals(new String(data), response.getContentAsString());
+//		MvcResult result = mockMvc.perform(requestBuilder).andReturn();
+//		MockHttpServletResponse response = result.getResponse();
+//		ObjectMapper mapper = new ObjectMapper();
+//		ByteArrayOutputStream out = new ByteArrayOutputStream();
+//		mapper.writeValue(out, productTransformer.transformProducts(resultList));
+//		byte[] data = out.toByteArray();
+//		log.debug("new String(data)="+new String(data));
+//		log.debug("response.getContentAsString()="+response.getContentAsString());
+//		assertEquals(new String(data), response.getContentAsString());
+		mockMvc.perform(requestBuilder)
+		.andDo(print())
+		.andExpect(jsonPath("$[0].displayName", is("Product1")))
+		.andExpect(jsonPath("$[0].shortDesc", is("Product Short Description 1")))
+		.andExpect(jsonPath("$[0].category", is("Category1")))
+		.andExpect(jsonPath("$[0].description", is("Product Description 1")))
+		.andExpect(jsonPath("$[0].price", is("10.0")))
+		.andExpect(jsonPath("$[0].discount", is("10.0")))
+		.andExpect(jsonPath("$[0].deliveryCharge", is("2.0")));
 	}
 
 	@WithMockUser(value = "user")
@@ -80,15 +93,21 @@ class ProductControllerTest {
 		Mockito.when(productService.getDeals()).thenReturn(resultList);
 		Mockito.when(productTransformer.transformDeals(resultList)).thenCallRealMethod();
 		RequestBuilder requestBuilder = MockMvcRequestBuilders.get("/deals").accept(MediaType.APPLICATION_JSON);
-		MvcResult result = mockMvc.perform(requestBuilder).andReturn();
-		MockHttpServletResponse response = result.getResponse();
-		ObjectMapper mapper = new ObjectMapper();
-		ByteArrayOutputStream out = new ByteArrayOutputStream();
-		mapper.writeValue(out, productTransformer.transformDeals(resultList));
-		byte[] data = out.toByteArray();
-		log.debug("new String(data)="+new String(data));
-		log.debug("response.getContentAsString()="+response.getContentAsString());
-		assertEquals(new String(data), response.getContentAsString());
+//		MvcResult result = mockMvc.perform(requestBuilder).andReturn();
+//		MockHttpServletResponse response = result.getResponse();
+//		ObjectMapper mapper = new ObjectMapper();
+//		ByteArrayOutputStream out = new ByteArrayOutputStream();
+//		mapper.writeValue(out, productTransformer.transformDeals(resultList));
+//		byte[] data = out.toByteArray();
+//		log.debug("new String(data)="+new String(data));
+//		log.debug("response.getContentAsString()="+response.getContentAsString());
+//		assertEquals(new String(data), response.getContentAsString());
+		mockMvc.perform(requestBuilder)
+		.andDo(print())
+		.andExpect(jsonPath("$[0].displayName", is("Product1")))
+		.andExpect(jsonPath("$[0].shortDesc", is("Product Short Description 1")))
+		.andExpect(jsonPath("$[0].category", is("Category1")))
+		.andExpect(jsonPath("$[0].discount", is("10.0")));
 	}
 
 	@WithMockUser(value = "user")
@@ -99,15 +118,28 @@ class ProductControllerTest {
 		Mockito.when(productService.searchProductExact(products.get(0).getDisplayName())).thenReturn(resultList);
 		Mockito.when(productTransformer.transformProductsDetails(resultList)).thenCallRealMethod();
 		RequestBuilder requestBuilder = MockMvcRequestBuilders.get("/"+products.get(0).getDisplayName()+"/details").accept(MediaType.APPLICATION_JSON);
-		MvcResult result = mockMvc.perform(requestBuilder).andReturn();
-		MockHttpServletResponse response = result.getResponse();
-		ObjectMapper mapper = new ObjectMapper();
-		ByteArrayOutputStream out = new ByteArrayOutputStream();
-		mapper.writeValue(out, productTransformer.transformProductsDetails(resultList));
-		byte[] data = out.toByteArray();
-		log.debug("new String(data)="+new String(data));
-		log.debug("response.getContentAsString()="+response.getContentAsString());
-		assertEquals(new String(data), response.getContentAsString());
+//		MvcResult result = mockMvc.perform(requestBuilder).andReturn();
+//		MockHttpServletResponse response = result.getResponse();
+//		ObjectMapper mapper = new ObjectMapper();
+//		ByteArrayOutputStream out = new ByteArrayOutputStream();
+//		mapper.writeValue(out, productTransformer.transformProductsDetails(resultList));
+//		byte[] data = out.toByteArray();
+//		log.debug("new String(data)="+new String(data));
+//		log.debug("response.getContentAsString()="+response.getContentAsString());
+//		assertEquals(new String(data), response.getContentAsString());
+		mockMvc.perform(requestBuilder)
+		.andDo(print())
+		.andExpect(jsonPath("$[0].displayName", is("Product1")))
+		.andExpect(jsonPath("$[0].shortDesc", is("Product Short Description 1")))
+		.andExpect(jsonPath("$[0].category", is("Category1")))
+		.andExpect(jsonPath("$[0].desc", is("Product Description 1")))
+		.andExpect(jsonPath("$[0].price", is("10.0")))
+		.andExpect(jsonPath("$[0].discount", is("10.0")))
+		.andExpect(jsonPath("$[0].deliveryCharge", is("2.0")))
+		.andExpect(jsonPath("$[0].offerPrice", is("100.0")))
+		.andExpect(jsonPath("$[0].seller", is("SellerOne")))
+		.andExpect(jsonPath("$[0].sellerCount", is("5")))
+		.andExpect(jsonPath("$[0].avgRating", is("3.8333333333333335")));
 	}
 
 	@WithMockUser(value = "user")
@@ -118,15 +150,20 @@ class ProductControllerTest {
 		Mockito.when(productService.getRecommendations("testuser")).thenReturn(resultList);
 		Mockito.when(productTransformer.transformRecommendations(resultList)).thenCallRealMethod();
 		RequestBuilder requestBuilder = MockMvcRequestBuilders.get("/testuser/recommendations").accept(MediaType.APPLICATION_JSON);
-		MvcResult result = mockMvc.perform(requestBuilder).andReturn();
-		MockHttpServletResponse response = result.getResponse();
-		ObjectMapper mapper = new ObjectMapper();
-		ByteArrayOutputStream out = new ByteArrayOutputStream();
-		mapper.writeValue(out, productTransformer.transformRecommendations(resultList));
-		byte[] data = out.toByteArray();
-		log.debug("new String(data)="+new String(data));
-		log.debug("response.getContentAsString()="+response.getContentAsString());
-		assertEquals(new String(data), response.getContentAsString());
+//		MvcResult result = mockMvc.perform(requestBuilder).andReturn();
+//		MockHttpServletResponse response = result.getResponse();
+//		ObjectMapper mapper = new ObjectMapper();
+//		ByteArrayOutputStream out = new ByteArrayOutputStream();
+//		mapper.writeValue(out, productTransformer.transformRecommendations(resultList));
+//		byte[] data = out.toByteArray();
+//		log.debug("new String(data)="+new String(data));
+//		log.debug("response.getContentAsString()="+response.getContentAsString());
+//		assertEquals(new String(data), response.getContentAsString());
+		mockMvc.perform(requestBuilder)
+		.andDo(print())
+		.andExpect(jsonPath("$[0].displayName", is("Product1")))
+		.andExpect(jsonPath("$[0].shortDesc", is("Product Short Description 1")))
+		.andExpect(jsonPath("$[0].category", is("Category1")));
 	}
 
 

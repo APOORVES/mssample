@@ -23,6 +23,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Value("${com.mssample.password}")
     private String password;
 
+	/**
+	 * Security auth config
+	 * @param auth
+	 * @throws Exception
+	 */
 	@Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication()
@@ -30,6 +35,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
           .authorities("USER");
     }
 	
+	/**
+	 * Secuitry configuration
+	 */
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
@@ -45,6 +53,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         .formLogin().disable();
 	}
 	
+	/**
+	 * @return password encoder bean
+	 */
 	@Bean
 	public PasswordEncoder passwordEncoder() {
 	    return new BCryptPasswordEncoder();

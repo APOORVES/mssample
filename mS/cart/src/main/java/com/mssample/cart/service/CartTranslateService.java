@@ -18,6 +18,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import com.mssample.account.model.User;
+import com.mssample.cart.aop.EnableLogging;
 import com.mssample.cart.exception.CartException;
 import com.mssample.cart.extclient.AccountClient;
 import com.mssample.cart.extclient.ProductClient;
@@ -33,6 +34,10 @@ import com.mssample.product.model.Product;
 import lombok.Getter;
 import lombok.Setter;
 
+/**
+ * @author Apoorve
+ *
+ */
 @Service
 @Getter @Setter
 public class CartTranslateService {
@@ -48,23 +53,35 @@ public class CartTranslateService {
 	@Value("${com.mssample.cart.config.freedeliveryThreshold}")
 	private String freeDeliveryThreshold;
 
+	/**
+	 * @param cart
+	 * @return
+	 */
+	@EnableLogging
 	public GetCartResponse translateCart(Cart cart) {
 		List<CartDetail> cartDetails = cart.getCartSelections().stream().map(ci->{
 			Product product = productClient.findByDisplayName(ci.getProductDisplayName());
 			return new CartDetail(product.getDisplayName()
 					, product.getCategory(), product.getSeller().getSellerName()
 					, product.getPrice(), product.getDeliveryCharge()
-					, ci.getQuantity(), ci.getOfferPrice()+product.getDeliveryCharge(), ci.getOfferPrice());
+					, ci.getQuantity(), ci.getOfferPrice()+product.getDeliveryCharge()
+					, ci.getOfferPrice());
 		}).collect(Collectors.toList());
 		GetCartResponse getCartResponse = new GetCartResponse(cartDetails, Double.parseDouble(freeDeliveryThreshold));
 		return getCartResponse;
 	}
 
+	/**
+	 * Translate Add to cart request from UI to entity format
+	 * @param addToCartRequest
+	 * @param userName
+	 * @return
+	 */
+	@EnableLogging
 	public Cart translateAddToCartRequest(@Valid AddToCartRequestUI addToCartRequest, String userName) {
 		Optional<User> user;
 		if(GUEST_INDICATOR.equals(userName)) {
-			UUID uniqueID = UUID.randomUUID();
-			String uniqueIDStr = uniqueID.toString().replace("-", "");
+			String uniqueIDStr = UUID.randomUUID().toString().replace("-", "");
 			User userToBeCreated = new User();
 			userToBeCreated.setEmail(GUEST_MARKER + uniqueIDStr + "@"+GUEST_MARKER+".com");
 			userToBeCreated.setName(GUEST_MARKER+ uniqueIDStr);
@@ -73,11 +90,10 @@ public class CartTranslateService {
 			Long userId = accountClient.saveUser(userToBeCreated);
 			userToBeCreated.setUserId(userId);
 			user = Optional.of(userToBeCreated);
-		}else {
-			user = accountClient.findByName(userName);
-			if(!user.isPresent())
-				throw new CartException(UI_ERROR_INVALID_USER);
 		}
+		else
+			user = cartService.validateUser(userName);
+
 		Product product = productClient.findByDisplayNameAndCategory(addToCartRequest.getProductName(), addToCartRequest.getCategory());
 		Optional<Cart> existingCart = cartRepository.findByUserName(user.get().getName());
 		Cart cartToBeSaved;
@@ -100,22 +116,20 @@ public class CartTranslateService {
 		return cartToBeSaved;
 	}
 
+	/**
+	 * Translate Modify cart request from UI to entity format
+	 * @param modifyCartRequest
+	 * @param userName
+	 * @return
+	 */
+	@EnableLogging
 	public Cart translateCartModifyRequest(@Valid ModifyCartRequestUI modifyCartRequest, String userName) {
 		Cart cartToBeSaved = cartService.getCart(userName);
 		Product product = productClient.findByDisplayName(modifyCartRequest.getProductName());
-		boolean found = false;
-		for(CartItem cartItem: cartToBeSaved.getCartSelections()) {
-			if(cartItem.getProductDisplayName().equals(product.getDisplayName())) {
-				cartItem.setQuantity(modifyCartRequest.getQuantity());
-				cartItem.setOfferPrice(modifyCartRequest.getCartOfferPrice());
-				found = true;
-			}
-		}
-		if(!found) {
-			throw new CartException(UI_ERROR_PRODUCT_NOT_PRESENT_IN_CART);
-		}
+		cartService.validateProductPresentInCart(modifyCartRequest, cartToBeSaved, product);
 		return cartToBeSaved;
 	}
+
 	
 
 }

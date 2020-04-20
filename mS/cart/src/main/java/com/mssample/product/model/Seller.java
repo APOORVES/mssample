@@ -5,6 +5,11 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+/**
+ * Product model class representing a Seller
+ * @author Apoorve
+ *
+ */
 @Getter @Setter @NoArgsConstructor @AllArgsConstructor
 public class Seller {
 	private String selledId;

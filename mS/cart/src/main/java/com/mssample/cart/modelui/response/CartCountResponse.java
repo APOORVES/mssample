@@ -8,6 +8,11 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+/**
+ * CartCount Response
+ * @author Apoorve
+ *
+ */
 @Setter @Getter @AllArgsConstructor @NoArgsConstructor
 @JsonInclude(Include. NON_NULL)
 public class CartCountResponse extends CartResponse {

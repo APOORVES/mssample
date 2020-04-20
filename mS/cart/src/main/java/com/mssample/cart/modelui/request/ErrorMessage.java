@@ -6,9 +6,20 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+/**
+ * Error message class
+ * @author Apoorve
+ *
+ */
 @Getter @Setter @NoArgsConstructor
 public class ErrorMessage {
+	/**
+	 * Error code
+	 */
 	private String errorCode;
+	/**
+	 * Error Message
+	 */
 	private String errorMessage;
 	public ErrorMessage(String errorCode, String errorMessage) {
 		super();

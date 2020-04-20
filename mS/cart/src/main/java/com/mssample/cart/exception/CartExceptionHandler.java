@@ -20,6 +20,11 @@ import com.mssample.cart.modelui.request.ErrorMessage;
 
 import lombok.extern.slf4j.Slf4j;
 
+/**
+ * Exception handler for cart microservice
+ * @author Apoorve
+ *
+ */
 @Slf4j
 @Order(Ordered.HIGHEST_PRECEDENCE)
 @ControllerAdvice

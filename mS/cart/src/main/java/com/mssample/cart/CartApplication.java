@@ -15,6 +15,9 @@ import org.springframework.web.client.RestTemplate;
 @SpringBootApplication
 public class CartApplication {
 
+	/** Spring boot application main method
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		SpringApplication.run(CartApplication.class, args);
 	}

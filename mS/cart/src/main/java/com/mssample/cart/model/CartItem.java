@@ -16,24 +16,50 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+/**
+ * Cart Item data model. This has the cart contents in terms ofproducts and their quanitties. 
+ * @author Apoorve
+ *
+ */
 @Entity
 @Table(name = "CART_ITEM")
 @Getter @Setter @NoArgsConstructor @AllArgsConstructor
 @SequenceGenerator(name="cartitem_seq", initialValue=1, allocationSize=100)
 public class CartItem {
+	/**
+	 * 
+	 */
 	@Id
 	@Column(name="CART_ITEM_ID")
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "cartitem_seq")
 	private Long cartItemId;
+	/**
+	 * 
+	 */
 	@Column(name="PRODUCT_DISPLAY_NAME")
 	private String productDisplayName;
+	/**
+	 * 
+	 */
 	@Column(name="QUANTITY")
 	private int quantity;
+	/**
+	 * 
+	 */
 	@Column(name="OFFER_PRICE")
 	private double offerPrice;
+	/**
+	 * 
+	 */
 	@ManyToOne(cascade= CascadeType.ALL)
 	@JoinColumn(name="CART_ID")
 	private Cart cart;
+	/**
+	 * @param productDisplayName
+	 * @param quantity
+	 * @param offerPrice
+	 * @param cart
+	 */
 	public CartItem(String productDisplayName, int quantity, double offerPrice, Cart cart) {
 		super();
 		this.productDisplayName = productDisplayName;

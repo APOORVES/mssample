@@ -1,8 +1,11 @@
 package com.mssample.account.rest;
 
+import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 
 import java.util.List;
 
@@ -57,11 +60,6 @@ class AccountControllerTest {
 															  .accept(MediaType.APPLICATION_JSON);
 		MvcResult result = mockMvc.perform(requestBuilder).andReturn();
 		MockHttpServletResponse response = result.getResponse();
-/*		ObjectMapper mapper = new ObjectMapper();
-		ByteArrayOutputStream out = new ByteArrayOutputStream();
-		mapper.writeValue(out, new String("<Seller:"+users.get(0).getName()+">", HttpStatus.OK));
-		byte[] data = out.toByteArray();
-*/
 		log.debug("expected="+new String("Seller:"+users.get(0).getName()));
 		log.debug("response.getContentAsString()="+response.getContentAsString());
 		assertEquals(new String("Seller:"+users.get(0).getName()), response.getContentAsString());
@@ -93,18 +91,10 @@ class AccountControllerTest {
 															  .content(asJsonString(users.get(0)))
 															  .contentType(MediaType.APPLICATION_JSON)
 															  .accept(MediaType.APPLICATION_JSON);
-		MvcResult result = mockMvc.perform(requestBuilder).andReturn();
-		MockHttpServletResponse response = result.getResponse();
-/*		ObjectMapper mapper = new ObjectMapper();
-		ByteArrayOutputStream out = new ByteArrayOutputStream();
-		mapper.writeValue(out, new String("<Seller:"+users.get(0).getName()+">", HttpStatus.OK));
-		byte[] data = out.toByteArray();
-*/
-		log.debug("expected="+new String("Seller:"+users.get(0).getName()));
-		log.debug("response.getContentAsString()="+response.getContentAsString());
-		assertTrue(response.getContentAsString().contains("400"));
-		assertTrue(response.getContentAsString().contains("Password should contain at least an uppercase and a lowercase character, a number and a special character"));
-		assertTrue(response.getContentAsString().contains("Confirm Password should contain at least an uppercase and a lowercase character, a number and a special character"));
+		mockMvc.perform(requestBuilder)
+		.andDo(print())
+		.andExpect(jsonPath("$.errorCode", is(400)))
+		.andExpect(jsonPath("$.errorMessage", is("Confirm Password should contain at least an uppercase and a lowercase character, a number and a special character,Password should contain at least an uppercase and a lowercase character, a number and a special character")));
 	}
 
 	@WithMockUser(value = "user")
@@ -118,11 +108,6 @@ class AccountControllerTest {
 															  .accept(MediaType.APPLICATION_JSON);
 		MvcResult result = mockMvc.perform(requestBuilder).andReturn();
 		MockHttpServletResponse response = result.getResponse();
-/*		ObjectMapper mapper = new ObjectMapper();
-		ByteArrayOutputStream out = new ByteArrayOutputStream();
-		mapper.writeValue(out, new String("<Seller:"+users.get(0).getName()+">", HttpStatus.OK));
-		byte[] data = out.toByteArray();
-*/
 		log.debug("expected="+new String("Seller:"+users.get(0).getName()));
 		log.debug("response.getContentAsString()="+response.getContentAsString());
 		assertEquals(new String("Successfully Updated"), response.getContentAsString());
@@ -136,13 +121,11 @@ class AccountControllerTest {
 															  .content(asJsonString(users.get(0)))
 															  .contentType(MediaType.APPLICATION_JSON)
 															  .accept(MediaType.APPLICATION_JSON);
-		MvcResult result = mockMvc.perform(requestBuilder).andReturn();
-		MockHttpServletResponse response = result.getResponse();
-		log.debug("expected="+new String("Seller:"+users.get(0).getName()));
-		log.debug("response.getContentAsString()="+response.getContentAsString());
-		assertTrue(response.getContentAsString().contains(users.get(0).getEmail()));
-		assertTrue(response.getContentAsString().contains(users.get(0).getName()));
-		assertTrue(response.getContentAsString().contains(users.get(0).getPassword()));
+		mockMvc.perform(requestBuilder)
+		.andDo(print())
+		.andExpect(jsonPath("$.email", is(users.get(0).getEmail())))
+		.andExpect(jsonPath("$.name", is(users.get(0).getName())))
+		.andExpect(jsonPath("$.password", is(users.get(0).getPassword())));
 	}
 	
 	public static String asJsonString(final Object obj) {
