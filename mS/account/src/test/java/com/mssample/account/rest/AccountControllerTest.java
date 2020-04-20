@@ -1,5 +1,6 @@
 package com.mssample.account.rest;
 
+import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -94,7 +95,8 @@ class AccountControllerTest {
 		mockMvc.perform(requestBuilder)
 		.andDo(print())
 		.andExpect(jsonPath("$.errorCode", is(400)))
-		.andExpect(jsonPath("$.errorMessage", is("Confirm Password should contain at least an uppercase and a lowercase character, a number and a special character,Password should contain at least an uppercase and a lowercase character, a number and a special character")));
+		.andExpect(jsonPath("$.errorMessage", containsString("Password should contain at least an uppercase and a lowercase character, a number and a special character")))
+		.andExpect(jsonPath("$.errorMessage", containsString("Confirm Password should contain at least an uppercase and a lowercase character, a number and a special character")));
 	}
 
 	@WithMockUser(value = "user")
