@@ -77,23 +77,23 @@ public class AllData {
 		return users; 
 	  }
 		public static User createUser1() {
-			User user = new User(1, "user1@domain.com", "UserOne", "pa$$w0rD", "pa$$w0rD");
+			User user = new User(1l, "user1@domain.com", "UserOne", "pa$$w0rD", "pa$$w0rD");
 			return user;
 		}
 		public static User createUser2() {
-			User user = new User(2, "user2@domain.com", "UserTwo", "pa$$w0rD", "pa$$w0rD");
+			User user = new User(2l, "user2@domain.com", "UserTwo", "pa$$w0rD", "pa$$w0rD");
 			return user;
 		}
 		public static User createUser3() {
-			User user = new User(3, "user3@domain.com", "UserThree", "pa$$w0rD", "pa$$w0rD");
+			User user = new User(3l, "user3@domain.com", "UserThree", "pa$$w0rD", "pa$$w0rD");
 			return user;
 		}
 		public static User createUser4() {
-			User user = new User(4, "user4@domain.com", "UserFour", "pa$$w0rD", "pa$$w0rD");
+			User user = new User(4l, "user4@domain.com", "UserFour", "pa$$w0rD", "pa$$w0rD");
 			return user;
 		}
 		public static User createUser5() {
-			User user = new User(5, "user5@domain.com", "UserFive", "pa$$w0rD", "pa$$w0rD");
+			User user = new User(5l, "user5@domain.com", "UserFive", "pa$$w0rD", "pa$$w0rD");
 			return user;
 		}
 	

@@ -14,7 +14,8 @@ import com.mssample.account.testdata.AllData;
 public class AccountApplication {
 
 	public static void main(String[] args) {
-		ConfigurableApplicationContext context = SpringApplication.run(AccountApplication.class, args);
+		ConfigurableApplicationContext context 
+		= SpringApplication.run(AccountApplication.class, args);
 		testDataSetup(context);
 	}
 

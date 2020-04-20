@@ -104,8 +104,8 @@ public class CartService {
 	 * @param product
 	 */
 	@EnableLogging
-	public void validateProductPresentInCart(ModifyCartRequestUI modifyCartRequest, Cart cartToBeSaved,
-			Product product) {
+	public void validateProductPresentInCart(ModifyCartRequestUI modifyCartRequest
+			, Cart cartToBeSaved, Product product) {
 		boolean found = false;
 		for(CartItem cartItem: cartToBeSaved.getCartSelections()) {
 			if(cartItem.getProductDisplayName().equals(product.getDisplayName())) {

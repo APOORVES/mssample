@@ -13,10 +13,12 @@ import com.mssample.cart.model.Cart;
 public class AddToCartResponse extends CartResponse {
 	public AddToCartResponse(Cart cart) {
 		if(cart.getUserName().startsWith(GUEST_MARKER)) {
-			this.setMessage(CartProperties.getProperty("com.mssample.cart.addToCartGuestUserSuccessMessage") + " " + cart.getUserName());
+			this.setMessage(CartProperties.getProperty("com.mssample.cart.addToCartGuestUserSuccessMessage") 
+					+ " " + cart.getUserName());
 		}
 		else{
-			this.setMessage(CartProperties.getProperty("com.mssample.cart.addToCartRegisteredUserSuccessMessage") + " " + cart.getUserName());
+			this.setMessage(CartProperties.getProperty("com.mssample.cart.addToCartRegisteredUserSuccessMessage") 
+					+ " " + cart.getUserName());
 		}
 	}
 }

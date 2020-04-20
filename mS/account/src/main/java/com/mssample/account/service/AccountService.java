@@ -21,7 +21,8 @@ public class AccountService {
 	
 	public boolean findUser(User user){
 		log.debug("Trying login for user Name =" + user.getName());
-		Optional<User> returnedUser = accountRepository.findByNameAndPassword(user.getName(), user.getPassword()); 
+		Optional<User> returnedUser = accountRepository.findByNameAndPassword(user.getName(), 
+				user.getPassword()); 
 		if(!returnedUser.isPresent())
 			throw new UserNotFoundException("Invalid Login Credentails");
 		return true;

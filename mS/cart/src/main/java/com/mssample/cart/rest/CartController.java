@@ -45,10 +45,12 @@ public class CartController {
 	 */
 	@EnableLogging
 	@PostMapping(value = "/{userid}/addtocart", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<AddToCartResponse> addToCart(@Valid @RequestBody AddToCartRequestUI addToCartRequest, @PathVariable("userid") String userName, Errors errors){
+	public ResponseEntity<AddToCartResponse> addToCart(@Valid @RequestBody AddToCartRequestUI addToCartRequest
+			, @PathVariable("userid") String userName, Errors errors){
 		Cart cart = cartTranslateService.translateAddToCartRequest(addToCartRequest, userName);
 		cartService.addToCart(cart);
-		ResponseEntity<AddToCartResponse> response = new ResponseEntity<AddToCartResponse>(new AddToCartResponse(cart), HttpStatus.OK);
+		ResponseEntity<AddToCartResponse> response 
+			= new ResponseEntity<AddToCartResponse>(new AddToCartResponse(cart), HttpStatus.OK);
 		return response;
 	}
 	/**
@@ -60,10 +62,13 @@ public class CartController {
 	 */
 	@EnableLogging
 	@PostMapping(value = "/{userid}/modifycart", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<ModifyCartResponse> modifyCart(@Valid @RequestBody ModifyCartRequestUI modifyCartRequest, @PathVariable("userid") String userName, Errors errors){
-		Cart cart = cartTranslateService.translateCartModifyRequest(modifyCartRequest, userName);
+	public ResponseEntity<ModifyCartResponse> modifyCart(@Valid @RequestBody ModifyCartRequestUI modifyCartRequest
+			, @PathVariable("userid") String userName, Errors errors){
+		Cart cart = cartTranslateService.translateCartModifyRequest(modifyCartRequest
+				, userName);
 		cartService.modifyCart(cart);
-		ResponseEntity<ModifyCartResponse> response = new ResponseEntity<ModifyCartResponse>(new ModifyCartResponse(userName), HttpStatus.OK);
+		ResponseEntity<ModifyCartResponse> response 
+			= new ResponseEntity<ModifyCartResponse>(new ModifyCartResponse(userName), HttpStatus.OK);
 		return response;
 	}
 	/**
@@ -87,7 +92,8 @@ public class CartController {
 	@GetMapping(value = "/{userid}/cartcount", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<CartCountResponse> getCartCount(@PathVariable("userid") String userName){
 		int cartCount = cartService.getCartCount(userName);
-		ResponseEntity<CartCountResponse> response = new ResponseEntity<CartCountResponse>(new CartCountResponse(cartCount), HttpStatus.OK);
+		ResponseEntity<CartCountResponse> response 
+		= new ResponseEntity<CartCountResponse>(new CartCountResponse(cartCount), HttpStatus.OK);
 		return response;
 	}
 

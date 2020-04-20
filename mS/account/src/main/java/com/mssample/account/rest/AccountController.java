@@ -79,7 +79,8 @@ public class AccountController {
 			return ResponseEntity.ok(error);
 		}
 		boolean result = accountService.updateUser(user); 
-		log.info("sucessfully udpated the account for username="+user.getName() + "result=" + result);
+		log.info("sucessfully udpated the account for username="+user.getName() 
+				+ "result=" + result);
 		ResponseEntity<String> response = new ResponseEntity<String>("Successfully Updated", 
 				HttpStatus.OK);
 		return response;

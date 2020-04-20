@@ -67,7 +67,8 @@ public class CartTranslateService {
 					, ci.getQuantity(), ci.getOfferPrice()+product.getDeliveryCharge()
 					, ci.getOfferPrice());
 		}).collect(Collectors.toList());
-		GetCartResponse getCartResponse = new GetCartResponse(cartDetails, Double.parseDouble(freeDeliveryThreshold));
+		GetCartResponse getCartResponse = new GetCartResponse(cartDetails
+				, Double.parseDouble(freeDeliveryThreshold));
 		return getCartResponse;
 	}
 
@@ -78,7 +79,8 @@ public class CartTranslateService {
 	 * @return
 	 */
 	@EnableLogging
-	public Cart translateAddToCartRequest(@Valid AddToCartRequestUI addToCartRequest, String userName) {
+	public Cart translateAddToCartRequest(@Valid AddToCartRequestUI addToCartRequest
+			, String userName) {
 		Optional<User> user;
 		if(GUEST_INDICATOR.equals(userName)) {
 			String uniqueIDStr = UUID.randomUUID().toString().replace("-", "");
@@ -94,7 +96,8 @@ public class CartTranslateService {
 		else
 			user = cartService.validateUser(userName);
 
-		Product product = productClient.findByDisplayNameAndCategory(addToCartRequest.getProductName(), addToCartRequest.getCategory());
+		Product product = productClient.findByDisplayNameAndCategory(addToCartRequest.getProductName()
+				, addToCartRequest.getCategory());
 		Optional<Cart> existingCart = cartRepository.findByUserName(user.get().getName());
 		Cart cartToBeSaved;
 		if(existingCart.isPresent()) {
@@ -111,7 +114,8 @@ public class CartTranslateService {
 			}
 		}
 		if(!found) {
-			cartToBeSaved.getCartSelections().add(new CartItem(product.getDisplayName(), addToCartRequest.getQuantity(), product.getOfferPrice(), cartToBeSaved));
+			cartToBeSaved.getCartSelections().add(new CartItem(product.getDisplayName()
+					, addToCartRequest.getQuantity(), product.getOfferPrice(), cartToBeSaved));
 		}
 		return cartToBeSaved;
 	}
@@ -123,7 +127,8 @@ public class CartTranslateService {
 	 * @return
 	 */
 	@EnableLogging
-	public Cart translateCartModifyRequest(@Valid ModifyCartRequestUI modifyCartRequest, String userName) {
+	public Cart translateCartModifyRequest(@Valid ModifyCartRequestUI modifyCartRequest
+			, String userName) {
 		Cart cartToBeSaved = cartService.getCart(userName);
 		Product product = productClient.findByDisplayName(modifyCartRequest.getProductName());
 		cartService.validateProductPresentInCart(modifyCartRequest, cartToBeSaved, product);
