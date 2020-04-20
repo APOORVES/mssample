@@ -1,3 +1,5 @@
 mock.7z
 .metadata
 logs
+/mS/account/*.log
+/mS/account/*.gz

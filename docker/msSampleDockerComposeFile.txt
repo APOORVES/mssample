@@ -23,6 +23,7 @@ services:
     depends_on:
       - "configserverms"
       - "db"
+      - "productms"
     restart: on-failure
   accountms:
     image: apoorves/accountms:latest
@@ -31,6 +32,8 @@ services:
     depends_on:
       - "configserverms"
       - "db"
+      - "productms"
+      - "cartms"
     restart: on-failure
   db:
     image: mysql:5.7
