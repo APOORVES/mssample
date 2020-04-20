@@ -8,3 +8,7 @@ services:
     image: apoorves/productms:latest
     ports:
     - "5001:5001"
+  cartms:
+    image: apoorves/cartms:latest
+    ports:
+    - "5002:5002"

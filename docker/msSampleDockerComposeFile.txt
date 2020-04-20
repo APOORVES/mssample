@@ -16,18 +16,18 @@ services:
       - "configserverms"
       - "db"
     restart: on-failure
-  accountms:
-    image: apoorves/accountms:latest
+  cartms:
+    image: apoorves/cartms:latest
     ports:
-    - "5001:5001"
+    - "5002:5002"
     depends_on:
       - "configserverms"
       - "db"
     restart: on-failure
-  cartms:
+  accountms:
     image: apoorves/accountms:latest
     ports:
-    - "5002:5002"
+    - "5001:5001"
     depends_on:
       - "configserverms"
       - "db"
